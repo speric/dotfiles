@@ -1,0 +1,8 @@
+#!/bin/sh
+
+echo "Bootstrapping dotfiles..."
+ln -s ~/dev/dotfiles/git ~/.gitconfig
+ln -s ~/dev/dotfiles/vim ~/.vimrc
+ln -s ~/dev/dotfiles/zsh ~/.zshrc
+
+echo "Done"

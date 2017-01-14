@@ -8,5 +8,6 @@ ln -s ~/dev/dotfiles/zsh ~/.zshrc
 ln -s ~/dev/dotfiles/gem ~/.gemrc
 ln -s ~/dev/dotfiles/pry ~/.pryrc
 ln -s ~/dev/dotfiles/rvm ~/.rvmrc
+ln -s ~/dev/dotfiles/ag ~/.agignore
 
 echo "Done"

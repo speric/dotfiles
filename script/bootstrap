@@ -7,5 +7,6 @@ ln -s ~/dev/dotfiles/vim ~/.vimrc
 ln -s ~/dev/dotfiles/zsh ~/.zshrc
 ln -s ~/dev/dotfiles/gem ~/.gemrc
 ln -s ~/dev/dotfiles/pry ~/.pryrc
+ln -s ~/dev/dotfiles/rvm ~/.rvmrc
 
 echo "Done"

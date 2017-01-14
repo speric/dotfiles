@@ -1,3 +1,49 @@
+[core]
+  editor = vim
+  excludesfile = /Users/ericfarkas/.gitignore_global
+
 [user]
-	name = Eric Farkas
-	email = eric@prudentiadigital.com
+  name = Eric Farkas
+  email = eric@prudentiadigital.com
+
+[help]
+  autocorrect = 1
+
+[color]
+  color = auto
+  branch = auto
+  diff = auto
+  status = auto
+  ui = true
+
+[alias]
+  br = branch
+  st = status
+  co = checkout
+  ci = commit
+  # +head+ shows the latest commit for the current branch
+  head = log -n1
+
+  # +cbranch+ returns the current branch you are on
+  cbranch = !"git branch | grep '*' | cut -f2 -d' '"
+
+  # +rbranch+ returns the remote branch for the current branch you are on assuming it
+  # is named the same
+  rbranch = !"git branch -r | grep -E \"/`git cbranch`$\" | grep -v -e \"->\""
+
+  # +review+ shows changes in the remote branch that your current local branch does not have
+  review = !"git log `git cbranch`..`git rbranch`"
+
+  # +rreview+ shows changes in your local branch that its remote branch does not have
+  rreview = !"git log `git rbranch`..`git cbranch`"
+
+  # +pushr+ - pushes the current branch to the remote origin
+  pushr = !"git push --set-upstream origin `git cbranch`"
+
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+
+[push]
+  default = tracking
+
+[pull]
+  rebase = true

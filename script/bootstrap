@@ -5,5 +5,6 @@ ln -s ~/dev/dotfiles/git ~/.gitconfig
 ln -s ~/dev/dotfiles/gitignore ~/.gitignore_global
 ln -s ~/dev/dotfiles/vim ~/.vimrc
 ln -s ~/dev/dotfiles/zsh ~/.zshrc
+ln -s ~/dev/dotfiles/gem ~/.gemrc
 
 echo "Done"

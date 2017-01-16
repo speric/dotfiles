@@ -18,8 +18,6 @@ Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
-"autocmd vimenter * NERDTree
-
 let mapleader = ","
 
 syntax on

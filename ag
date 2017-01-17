@@ -6,3 +6,4 @@ frontend
 snapshot.sql
 *.sql
 vendor
+app/assets/images

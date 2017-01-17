@@ -27,4 +27,3 @@ alias servers='foreman start --procfile=Procfile.local'
 alias squash='git rebase -i master'
 alias sr='spring rspec'
 alias testtail='tail -f ./log/test.log'
-

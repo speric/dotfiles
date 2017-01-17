@@ -16,6 +16,7 @@ Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'tpope/vim-repeat'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'yegappan/mru'
 
 call plug#end()
 
@@ -53,6 +54,7 @@ nmap <C-m> :NERDTreeToggle<CR>
 nmap <C-p> :CtrlP<CR>
 nmap <C-t> :A<CR>
 nmap <C-s> :FixWhitespace<CR>
+nmap <C-f> :MRU<CR>
 
 " Airline
 let g:airline_theme='tomorrow'

@@ -7,3 +7,4 @@ snapshot.sql
 *.sql
 vendor
 app/assets/images
+node_modules

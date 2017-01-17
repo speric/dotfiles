@@ -4,7 +4,6 @@ call plug#begin()
 
 Plug 'rking/ag.vim'
 Plug 'bronson/vim-trailing-whitespace'
-Plug 'ctrlpvim/ctrlp.vim', { 'on': 'CtrlP' }
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'jsx'] }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'scrooloose/nerdtree'
@@ -50,12 +49,42 @@ set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 " Mappings
-nmap <C-m> :NERDTreeToggle<CR>
-nmap <C-p> :CtrlP<CR>
-nmap <C-t> :A<CR>
-nmap <C-s> :FixWhitespace<CR>
-nmap <C-f> :MRU<CR>
+noremap <C-m> :NERDTreeToggle<CR>       " Toggle NERDTree
+noremap <C-t> :A<CR>                    " Go to spec for current file
+noremap <C-f> :MRU<CR>                  " Show recently opened files
+
+noremap <Leader>s :FixWhitespace<CR>
+
+" Copy current filename to system clipboard (wonky but works for now)
+noremap <Leader>yf :!echo % \| pbcopy<CR><CR>
+
+" When in insert mode, expand `pry`
+inoremap pry require 'pry'; binding.pry "
 
 " Airline
 let g:airline_theme='tomorrow'
 let g:airline_powerline_fonts = 1
+
+" Run a given vim command on the results of fuzzy selecting from a given shell
+" command. See usage below.
+function! SelectaCommand(choice_command, selecta_args, vim_command)
+  try
+    let selection = system(a:choice_command . " | selecta " . a:selecta_args)
+  catch /Vim:Interrupt/
+    " Swallow the ^C so that the redraw below happens; otherwise there will be
+    " leftovers from selecta on the screen
+    redraw!
+    return
+  endtry
+  redraw!
+  exec a:vim_command . " " . selection
+endfunction
+
+" Find all files in all non-dot directories starting in the working directory.
+" Fuzzy select one of those. Open the selected file with :e.
+nnoremap <C-p> :call SelectaCommand("find * -type f", "", ":e")<cr>
+
+" Remember last position in a file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif

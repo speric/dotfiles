@@ -44,6 +44,7 @@
 
 [push]
   default = tracking
-
 [pull]
   rebase = true
+[web]
+  browser = google-chrome

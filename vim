@@ -33,6 +33,7 @@ set nowrap         " Do not wrap lines
 set splitright     " Opens vertical split right of current window
 set splitbelow     " Opens horizontal split below current window
 set ttyfast        " Send more characters for redraws
+set hlsearch       " Highlight search results
 
 " Tab stuff
 set tabstop=2

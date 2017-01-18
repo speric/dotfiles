@@ -49,17 +49,16 @@ set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 " Mappings
-noremap <C-m> :NERDTreeToggle<CR>       " Toggle NERDTree
 noremap <C-t> :A<CR>                    " Go to spec for current file
 noremap <C-f> :MRU<CR>                  " Show recently opened files
 
-noremap <Leader>s :FixWhitespace<CR>
-
 " Copy current filename to system clipboard (wonky but works for now)
 noremap <Leader>yf :!echo % \| pbcopy<CR><CR>
+noremap <Leader>m :NERDTreeToggle<CR> " Toggle NERDTree
+noremap <Leader>s :FixWhitespace<CR>
 
 " When in insert mode, expand `pry`
-inoremap pry require 'pry'; binding.pry "
+inoremap pry require 'pry'; binding.pry
 
 " Airline
 let g:airline_theme='tomorrow'

@@ -1,5 +1,6 @@
 tap 'homebrew/services'
 
+brew 'ctags'
 brew 'git'
 brew 'openssl'
 brew 'the_silver_searcher'

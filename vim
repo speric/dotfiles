@@ -3,12 +3,14 @@ set nocompatible
 " -- Plug
 call plug#begin()
 
-Plug 'rking/ag.vim'
 Plug 'bronson/vim-trailing-whitespace'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+Plug 'junegunn/fzf.vim'
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'jsx'] }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'szw/vim-tags'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-endwise'
@@ -17,7 +19,7 @@ Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'tpope/vim-repeat'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-"Plug 'yegappan/mru'
+Plug 'yegappan/mru'
 
 call plug#end()
 
@@ -29,13 +31,14 @@ colorscheme Tomorrow-Night " The greatest vim theme ever
 let NERDTreeShowHidden=1   " Show hidden files in NERDTree
 
 set encoding=utf-8
-set number         " Show line numbers
-set laststatus=2   " Always show status line
-set nowrap         " Do not wrap lines
-set splitright     " Opens vertical split right of current window
-set splitbelow     " Opens horizontal split below current window
-set ttyfast        " Send more characters for redraws
-set hlsearch       " Highlight search results
+set number                           " Show line numbers
+set laststatus=2                     " Always show status line
+set nowrap                           " Do not wrap lines
+set splitright                       " Opens vertical split right of current window
+set splitbelow                       " Opens horizontal split below current window
+set ttyfast                          " Send more characters for redraws
+set hlsearch                         " Highlight search results
+set grepprg=ag\ --nogroup\ --nocolor " Use ag over grep
 
 " Tab stuff
 set tabstop=2
@@ -59,8 +62,11 @@ noremap <C-t> :A<CR>
 " Show recently opened files
 noremap <C-f> :MRU<CR>
 
+" Open FZF
+noremap <C-p> :FZF<CR>
+
 " Clear search highlights
-nmap <SPACE> :noh<CR>
+noremap <SPACE> :noh<CR>
 
 " Copy current filename to system clipboard (wonky but works for now)
 noremap <Leader>yf :!echo % \| pbcopy<CR><CR>
@@ -71,6 +77,12 @@ noremap <Leader>m :NERDTreeToggle<CR>
 " Remove whitespace
 noremap <Leader>s :FixWhitespace<CR>
 
+" Backslash as shortcut to ag
+nnoremap \ :Ag<SPACE>
+
+" Search for the word under cursor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
 " When in insert mode, expand `pry`
 inoremap pry require 'pry'; binding.pry
 
@@ -78,27 +90,25 @@ inoremap pry require 'pry'; binding.pry
 let g:airline_theme='tomorrow'
 let g:airline_powerline_fonts = 1
 
-" Use ag over grep
-set grepprg=ag\ --nogroup\ --nocolor
-
-" -- CtrlP
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-
-" Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-let g:ctrlp_user_command = 'ag %s -l --nocolor -w -g ""'
-
-" ag is fast enough that CtrlP doesn't need to cache
-let g:ctrlp_use_caching = 0
-
-" Search for the word under cursor
-nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+" -- FZF
+let g:fzf_layout = { 'down': '~20%' }
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+let g:fzf_buffers_jump = 1
 
 " bind \ (backward slash) to grep shortcut
 command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-
-" Backslash as shortcut to ag
-nnoremap \ :Ag<SPACE>
 
 " Remember last position in a file
 if has("autocmd")

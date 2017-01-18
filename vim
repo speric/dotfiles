@@ -1,9 +1,11 @@
 set nocompatible
 
+" -- Plug
 call plug#begin()
 
 Plug 'rking/ag.vim'
 Plug 'bronson/vim-trailing-whitespace'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'jsx'] }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'scrooloose/nerdtree'
@@ -15,7 +17,7 @@ Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'tpope/vim-repeat'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'yegappan/mru'
+"Plug 'yegappan/mru'
 
 call plug#end()
 
@@ -49,41 +51,54 @@ set nowritebackup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
-" Mappings
-noremap <C-t> :A<CR>         " Go to spec for current file
-noremap <C-f> :MRU<CR>       " Show recently opened files
-nmap <SPACE> <SPACE>:noh<CR> " Clear results of last search
+" -- Mappings
+
+" Go to spec for current file
+noremap <C-t> :A<CR>
+
+" Show recently opened files
+noremap <C-f> :MRU<CR>
+
+" Clear search highlights
+nmap <SPACE> :noh<CR>
 
 " Copy current filename to system clipboard (wonky but works for now)
 noremap <Leader>yf :!echo % \| pbcopy<CR><CR>
-noremap <Leader>m :NERDTreeToggle<CR> " Toggle NERDTree
+
+" Toggle NERDTree
+noremap <Leader>m :NERDTreeToggle<CR>
+
+" Remove whitespace
 noremap <Leader>s :FixWhitespace<CR>
 
 " When in insert mode, expand `pry`
 inoremap pry require 'pry'; binding.pry
 
-" Airline
+" -- Airline
 let g:airline_theme='tomorrow'
 let g:airline_powerline_fonts = 1
 
-" Run a given vim command on the results of fuzzy selecting from a given shell
-" command. See usage below.
-function! SelectaCommand(choice_command, selecta_args, vim_command)
-  try
-    let selection = system(a:choice_command . " | selecta " . a:selecta_args)
-  catch /Vim:Interrupt/
-    " Swallow the ^C so that the redraw below happens; otherwise there will be
-    " leftovers from selecta on the screen
-    redraw!
-    return
-  endtry
-  redraw!
-  exec a:vim_command . " " . selection
-endfunction
+" Use ag over grep
+set grepprg=ag\ --nogroup\ --nocolor
 
-" Find all files in all non-dot directories starting in the working directory.
-" Fuzzy select one of those. Open the selected file with :e.
-nnoremap <C-p> :call SelectaCommand("find * -type f", "", ":e")<cr>
+" -- CtrlP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+" Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+let g:ctrlp_user_command = 'ag %s -l --nocolor -w -g ""'
+
+" ag is fast enough that CtrlP doesn't need to cache
+let g:ctrlp_use_caching = 0
+
+" Search for the word under cursor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+" bind \ (backward slash) to grep shortcut
+command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+
+" Backslash as shortcut to ag
+nnoremap \ :Ag<SPACE>
 
 " Remember last position in a file
 if has("autocmd")

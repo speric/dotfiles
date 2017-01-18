@@ -1,0 +1,13 @@
+require 'rubygems'
+
+begin
+  require 'spring-commands-rspec'
+rescue LoadError
+  puts "Could not load 'spring-commands-rspec'."
+end
+
+begin
+  require 'spring-commands-cucumber'
+rescue LoadError
+  puts "Could not load 'spring-commands-cucumber'."
+end

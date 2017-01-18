@@ -49,8 +49,9 @@ set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 " Mappings
-noremap <C-t> :A<CR>                    " Go to spec for current file
-noremap <C-f> :MRU<CR>                  " Show recently opened files
+noremap <C-t> :A<CR>         " Go to spec for current file
+noremap <C-f> :MRU<CR>       " Show recently opened files
+nmap <SPACE> <SPACE>:noh<CR> " Clear results of last search
 
 " Copy current filename to system clipboard (wonky but works for now)
 noremap <Leader>yf :!echo % \| pbcopy<CR><CR>

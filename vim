@@ -11,6 +11,8 @@ Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'szw/vim-tags'
+Plug 'thoughtbot/vim-rspec'
+Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-endwise'
@@ -75,7 +77,7 @@ noremap <Leader>yf :!echo % \| pbcopy<CR><CR>
 noremap <Leader>m :NERDTreeToggle<CR>
 
 " Remove whitespace
-noremap <Leader>s :FixWhitespace<CR>
+noremap <Leader>w :FixWhitespace<CR>
 
 " Backslash as shortcut to ag
 nnoremap \ :Ag<SPACE>
@@ -85,6 +87,14 @@ nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " When in insert mode, expand `pry`
 inoremap pry require 'pry'; binding.pry
+
+" vim-rspec
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+
+let g:rspec_command = "Dispatch spring rspec {spec}"
 
 " -- Airline
 let g:airline_theme='tomorrow'

@@ -6,6 +6,7 @@ call plug#begin()
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
+Plug 'lilydjwg/colorizer'
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'jsx'] }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'rking/ag.vim'
@@ -57,7 +58,6 @@ set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 " -- Mappings
-
 " Go to spec for current file
 noremap <C-t> :A<CR>
 
@@ -97,8 +97,16 @@ map <Leader>a :call RunAllSpecs()<CR>
 let g:rspec_command = "Dispatch spring rspec {spec}"
 
 " -- Airline
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.maxlinenr = ''
 let g:airline_theme='tomorrow'
 let g:airline_powerline_fonts = 1
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:airline_section_y = ''
+let g:airline_section_z = '%l/%L:%v'
 
 " -- FZF
 let g:fzf_layout = { 'down': '~20%' }

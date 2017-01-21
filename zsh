@@ -1,4 +1,4 @@
-export ZSH=/Users/ericfarkas/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 ZSH_THEME="bira"
 CASE_SENSITIVE="true"

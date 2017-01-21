@@ -58,6 +58,7 @@ set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 " -- Mappings
+
 " Go to spec for current file
 noremap <C-t> :A<CR>
 

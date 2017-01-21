@@ -17,8 +17,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 echo "Downloading vim color themes..."
 mkdir ~/.vim/colors
-cd ~/.vim/colors && wget https://raw.githubusercontent.com/chriskempson/tomorrow-theme/master/vim/colors/Tomorrow-Night.vim
-
-cd ~/.vim/colors && wget https://raw.githubusercontent.com/chriskempson/tomorrow-theme/master/vim/colors/Tomorrow.vim
+(cd ~/.vim/colors && wget https://raw.githubusercontent.com/chriskempson/tomorrow-theme/master/vim/colors/Tomorrow-Night.vim)
+(cd ~/.vim/colors && wget https://raw.githubusercontent.com/chriskempson/tomorrow-theme/master/vim/colors/Tomorrow.vim)
 
 echo "Done"

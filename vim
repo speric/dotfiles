@@ -3,7 +3,6 @@ set nocompatible
 " -- Plug
 call plug#begin()
 
-Plug 'bronson/vim-trailing-whitespace'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'lilydjwg/colorizer'

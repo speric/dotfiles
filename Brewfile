@@ -17,6 +17,7 @@ brew 'ack'
 brew 'selecta'
 
 cask '1password'
+cask 'cloak'
 cask 'font-input'
 cask 'google-chrome'
 cask 'iterm2-nightly'

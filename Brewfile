@@ -14,7 +14,7 @@ brew 'postgres', restart_service: true
 brew 'redis', restart_service: true
 brew 'wget'
 brew 'ack'
-brew 'selecta'
+brew 'yajl'
 
 cask '1password'
 cask 'cloak'

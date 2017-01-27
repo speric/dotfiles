@@ -57,6 +57,10 @@ set nowritebackup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
+" Undo stuff
+set undofile
+set undodir=~/.vimundo/
+
 " Remove trailing whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
 

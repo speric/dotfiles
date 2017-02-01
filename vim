@@ -42,6 +42,7 @@ set splitbelow                       " Opens horizontal split below current wind
 set ttyfast                          " Send more characters for redraws
 set hlsearch                         " Highlight search results
 set grepprg=ag\ --nogroup\ --nocolor " Use ag over grep
+set backspace=2                      " Make backspace work
 
 " Tab stuff
 set tabstop=2
@@ -95,6 +96,9 @@ nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " When in insert mode, expand `pry`
 inoremap pry require 'pry'; binding.pry
+
+" Reformat visual selection as JSON
+noremap <Leader>j !json_reformat<CR>
 
 " vim-rspec
 map <Leader>t :call RunCurrentSpecFile()<CR>

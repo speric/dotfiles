@@ -19,6 +19,7 @@ alias clean-db='be rake db:drop db:create db:migrate db:seed && be rake RAILS_EN
 alias console='spring rails console'
 alias deploy='git push origin master && git push dokku master'
 alias devtail='tail -f ./log/development.log'
+alias fs='foreman start'
 alias giton='git checkout '
 alias lint='npm run lint'
 alias mini='ruby -Ilib:test'

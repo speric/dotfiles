@@ -14,6 +14,7 @@ setopt auto_cd
 cdpath=($HOME/dev)
 
 # Aliases
+alias ag='ag --path-to-ignore ~/.agignore'
 alias be='RUBYOPT=W0 bundle exec'
 alias clean-db='be rake db:drop db:create db:migrate db:seed && be rake RAILS_ENV=test db:migrate'
 alias console='spring rails console'

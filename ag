@@ -2,9 +2,10 @@ log
 tags
 tmp
 spec/vcr_cassettes
-frontend
 snapshot.sql
 *.sql
 vendor
 app/assets/images
 node_modules
+bundle.js
+bundle.js.map

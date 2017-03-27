@@ -17,6 +17,7 @@ cdpath=($HOME/dev)
 alias ag='ag --path-to-ignore ~/.agignore'
 alias be='RUBYOPT=W0 bundle exec'
 alias clean-db='be rake db:drop db:create db:migrate db:seed && be rake RAILS_ENV=test db:migrate'
+alias clint='(cd frontend && npm run lint)'
 alias console='spring rails console'
 alias deploy='git push origin master && git push dokku master'
 alias devtail='tail -f ./log/development.log'

@@ -15,6 +15,7 @@ brew 'redis', restart_service: true
 brew 'wget'
 brew 'ack'
 brew 'yajl'
+brew 'postgis'
 
 cask '1password'
 cask 'cloak'

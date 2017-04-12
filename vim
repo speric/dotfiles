@@ -43,6 +43,7 @@ set ttyfast                          " Send more characters for redraws
 set hlsearch                         " Highlight search results
 set grepprg=ag\ --nogroup\ --nocolor " Use ag over grep
 set backspace=2                      " Make backspace work
+set incsearch                        " Highlight search matches as I type
 
 " Tab stuff
 set tabstop=2

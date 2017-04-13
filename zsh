@@ -16,6 +16,7 @@ cdpath=($HOME/dev)
 # Aliases
 alias ag='ag --path-to-ignore ~/.agignore'
 alias be='RUBYOPT=W0 bundle exec'
+alias beer='be rspec'
 alias clean-db='be rake db:drop db:create db:migrate db:seed && be rake RAILS_ENV=test db:migrate'
 alias clint='(cd frontend && npm run lint)'
 alias console='spring rails console'

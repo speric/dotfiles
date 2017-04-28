@@ -16,6 +16,7 @@ brew 'wget'
 brew 'ack'
 brew 'yajl'
 brew 'postgis'
+brew 'tree'
 
 cask '1password'
 cask 'cloak'

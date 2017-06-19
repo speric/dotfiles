@@ -3,11 +3,14 @@ set nocompatible
 " -- Plug
 call plug#begin()
 
+Plug 'hail2u/vim-css3-syntax'
+Plug 'HerringtonDarkholme/yats.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'lilydjwg/colorizer'
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'jsx'] }
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'othree/html5.vim'
+Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'jsx'] }
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'szw/vim-tags'
@@ -19,6 +22,7 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'tpope/vim-repeat'
+Plug 'trevordmiller/nova-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/Align'
@@ -30,7 +34,7 @@ let mapleader = ","        " Remap leader to ','
 syntax on                  " Turn on color syntax highlighting
 syntax enable
 set t_Co=256
-colorscheme Tomorrow-Night " The greatest vim theme ever
+colorscheme nova
 let NERDTreeShowHidden=1   " Show hidden files in NERDTree
 
 set encoding=utf-8
@@ -114,7 +118,7 @@ if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
 let g:airline_symbols.maxlinenr = ''
-let g:airline_theme='tomorrow'
+let g:airline_theme='nova'
 let g:airline_powerline_fonts = 1
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''

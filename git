@@ -31,6 +31,9 @@
   # is named the same
   rbranch = !"git branch -r | grep -E \"/`git cbranch`$\" | grep -v -e \"->\""
 
+  # +recent+ returns the most recent branches you've been on
+  recent = "for-each-ref --count=30 --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
+
   # +review+ shows changes in the remote branch that your current local branch does not have
   review = !"git log `git cbranch`..`git rbranch`"
 

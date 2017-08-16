@@ -9,6 +9,7 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR="vi"
 export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
 
 setopt auto_cd
 cdpath=($HOME/dev)

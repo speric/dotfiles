@@ -10,3 +10,4 @@ node_modules
 bundle.js
 bundle.js.map
 frontend/node_modules
+public

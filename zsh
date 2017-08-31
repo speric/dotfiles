@@ -36,6 +36,7 @@ alias update='git pull && bundle && be rake db:migrate db:test:prepare && (cd fr
 alias servers='fs --procfile=Procfile.local'
 alias squash='git rebase -i master'
 alias sr='spring rspec'
+alias srf='sr --only-failures'
 alias tag='ctags -R --exclude=.git --exclude=log --exclude=frontend/node_modules .'
 alias testtail='tail -f ./log/test.log'
 alias unhitch='hitch -u'

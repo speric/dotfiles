@@ -15,6 +15,7 @@ brew 'redis', restart_service: true
 brew 'wget'
 brew 'ack'
 brew 'yajl'
+brew 'yarn'
 brew 'postgis'
 brew 'tree'
 

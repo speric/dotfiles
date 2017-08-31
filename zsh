@@ -10,6 +10,7 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR="vi"
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
+export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
 
 setopt auto_cd
 cdpath=($HOME/dev)

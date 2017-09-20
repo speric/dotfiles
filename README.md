@@ -5,7 +5,7 @@ A simple set of [dotfiles](http://dotfiles.github.com/).
 ```
 git clone git@github.com:speric/dotfiles.git
 cd dotfiles
-script/bootstrap
+bin/setup
 brew bundle
 ```
 

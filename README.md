@@ -1,6 +1,6 @@
 ### dotfiles
 
-A simple set of [dotfiles](http://dotfiles.github.com/).
+A simple set of [dotfiles](http://dotfiles.github.com/) and development dependencies.
 
 #### Installation
 

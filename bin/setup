@@ -1,5 +1,10 @@
 #!/bin/sh
 
+set -e
+
+echo "Installing dependencies via Homebrew..."
+brew bundle
+
 echo "Linking dotfiles..."
 ln -s $(pwd)/git ~/.gitconfig
 ln -s $(pwd)/gitignore ~/.gitignore_global
@@ -20,7 +25,4 @@ mkdir ~/.vim/colors
 (cd ~/.vim/colors && wget https://raw.githubusercontent.com/chriskempson/tomorrow-theme/master/vim/colors/Tomorrow-Night.vim)
 (cd ~/.vim/colors && wget https://raw.githubusercontent.com/chriskempson/tomorrow-theme/master/vim/colors/Tomorrow.vim)
 
-echo "Installing dependencies via Homebrew..."
-brew bundle
-
-echo "Done"
+echo "Done!"

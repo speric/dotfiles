@@ -15,6 +15,7 @@ ln -s $(pwd)/pry ~/.pryrc
 ln -s $(pwd)/rvm ~/.rvmrc
 ln -s $(pwd)/ag ~/.ignore
 ln -s $(pwd)/spring ~/.spring.rb
+ln -s $(pwd)/speric.zsh-theme ~/.oh-my-zsh/themes/speric.zsh-theme
 
 echo "Installing vim plug..."
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \

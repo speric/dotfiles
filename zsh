@@ -1,6 +1,6 @@
 export ZSH=~/.oh-my-zsh
 
-ZSH_THEME="bira"
+ZSH_THEME="speric"
 CASE_SENSITIVE="true"
 
 plugins=()

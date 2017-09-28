@@ -1,5 +1,7 @@
 require 'rubygems'
 
+Spring.quiet = true
+
 begin
   require 'spring-commands-rspec'
 rescue LoadError

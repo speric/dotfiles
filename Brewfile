@@ -18,6 +18,7 @@ brew 'yajl'
 brew 'yarn'
 brew 'postgis'
 brew 'tree'
+brew 'exif'
 
 cask '1password'
 cask 'cloak'

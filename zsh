@@ -35,6 +35,7 @@ alias release="git co master && git pull && be rake release_notes"
 alias reset_author="git commit --amend --reset-author"
 alias rs="rspec --no-profile" # --order defined
 alias update="git pull && bundle && be rake db:migrate db:test:prepare && (cd frontend && npm install)"
+alias recent="git recent"
 alias servers="fs --procfile=Procfile.local"
 alias squash="git rebase -i master"
 alias sr="spring rspec --no-profile"
@@ -51,3 +52,15 @@ alias tag="ctags -R \
 alias testtail="tail -f ./log/test.log"
 alias unhitch="hitch -u"
 alias vi="vim"
+
+# Shortcut for checking out git branches
+# `gd --` will check out your second most recent branch
+# `gd ---` will check out your third most recent branch
+gd() {
+  arg=$1
+  parsed_arg="${arg//[^-]}"
+  ((steps=${#parsed_arg}))
+  if (($steps > 0)); then
+    git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format='%(refname:short)' | sed -n ${steps}p | xargs git co
+  fi
+}

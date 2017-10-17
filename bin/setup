@@ -2,10 +2,20 @@
 
 set -e
 
-echo "Installing dependencies via Homebrew..."
+if [ ! $(which brew) ]; then
+  echo "[dotfiles] Installing homebrew..."
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+echo "[dotfiles] Installing dependencies via Homebrew..."
 brew bundle
 
-echo "Linking dotfiles..."
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+  echo "[dotfiles] Installing oh-my-zsh..."
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+fi
+
+echo "[dotfiles] Linking dotfiles..."
 ln -s $(pwd)/git ~/.gitconfig
 ln -s $(pwd)/gitignore ~/.gitignore_global
 ln -s $(pwd)/vim ~/.vimrc
@@ -17,13 +27,13 @@ ln -s $(pwd)/ignore ~/.ignore
 ln -s $(pwd)/spring ~/.spring.rb
 ln -s $(pwd)/speric.zsh-theme ~/.oh-my-zsh/themes/speric.zsh-theme
 
-echo "Installing vim plug..."
+echo "[dotfiles] Installing vim plug..."
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-echo "Downloading vim color themes..."
+echo "[dotfiles] Downloading vim color themes..."
 mkdir ~/.vim/colors
 (cd ~/.vim/colors && wget https://raw.githubusercontent.com/chriskempson/tomorrow-theme/master/vim/colors/Tomorrow-Night.vim)
 (cd ~/.vim/colors && wget https://raw.githubusercontent.com/chriskempson/tomorrow-theme/master/vim/colors/Tomorrow.vim)
 
-echo "Done!"
+echo "[dotfiles] Done!"

@@ -54,14 +54,6 @@ alias testtail="tail -f ./log/test.log"
 alias unhitch="hitch -u"
 alias vi="vim"
 
-# Shortcut for checking out git branches
-# `cb --` will check out your second most recent branch
-# `cb ---` will check out your third most recent branch
 cb() {
-  arg=$1
-  parsed_arg="${arg//[^-]}"
-  ((steps=${#parsed_arg}))
-  if (($steps > 0)); then
-    git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format='%(refname:short)' | sed -n ${steps}p | xargs git co
-  fi
+  git checkout $(git short-recent | selecta)
 }

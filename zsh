@@ -56,10 +56,10 @@ alias vi="vim"
 
 # Functions
 
-# Use `selecta` to browse/select a recent git branch
+# Use `fzf` to browse/select a recent git branch
 # h/t @jeremywrowe
 cb() {
-  git checkout $(git short-recent | selecta)
+  git checkout $(git short-recent | fzf)
 }
 
 # From https://github.com/pengwynn/dotfiles/blob/master/zsh/window.zsh

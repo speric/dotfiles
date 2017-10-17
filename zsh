@@ -54,9 +54,9 @@ alias unhitch="hitch -u"
 alias vi="vim"
 
 # Shortcut for checking out git branches
-# `gd --` will check out your second most recent branch
-# `gd ---` will check out your third most recent branch
-gd() {
+# `cb --` will check out your second most recent branch
+# `cb ---` will check out your third most recent branch
+cb() {
   arg=$1
   parsed_arg="${arg//[^-]}"
   ((steps=${#parsed_arg}))

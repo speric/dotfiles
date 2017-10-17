@@ -36,6 +36,7 @@ alias reset_author="git commit --amend --reset-author"
 alias rs="rspec --no-profile" # --order defined
 alias update="git pull && bundle && be rake db:migrate db:test:prepare && (cd frontend && npm install)"
 alias recent="git recent"
+alias reload="source $HOME/.zshrc"
 alias servers="fs --procfile=Procfile.local"
 alias squash="git rebase -i master"
 alias sr="spring rspec --no-profile"

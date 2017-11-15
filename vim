@@ -106,11 +106,11 @@ inoremap pry require 'pry'; binding.pry
 " Reformat visual selection as JSON
 noremap <Leader>j !json_reformat<CR>
 
-" " Get off my lawn
-" nnoremap <Left> :echoe "Use h"<CR>
-" nnoremap <Right> :echoe "Use l"<CR>
-" nnoremap <Up> :echoe "Use k"<CR>
-" nnoremap <Down> :echoe "Use j"<CR>
+" Get off my lawn
+nnoremap <Left> :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up> :echoe "Use k"<CR>
+nnoremap <Down> :echoe "Use j"<CR>
 
 " vim-rspec
 map <Leader>t :call RunCurrentSpecFile()<CR>

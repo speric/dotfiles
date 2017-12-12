@@ -23,7 +23,6 @@ ln -s $(pwd)/zsh $HOME/.zshrc
 ln -s $(pwd)/gem $HOME/.gemrc
 ln -s $(pwd)/pry $HOME/.pryrc
 ln -s $(pwd)/rvm $HOME/.rvmrc
-ln -s $(pwd)/pow $HOME/.powconfig
 ln -s $(pwd)/ag $HOME/.agignore
 ln -s $(pwd)/spring $HOME/.spring.rb
 ln -s $(pwd)/speric.zsh-theme $HOME/.oh-my-zsh/themes/speric.zsh-theme

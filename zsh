@@ -15,6 +15,13 @@ export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
 setopt auto_cd
 cdpath=($HOME/dev)
 
+# use .localrc for stuff you don't want
+# in your public, versioned repo
+if [[ -a ~/.localrc ]]
+then
+  source ~/.localrc
+fi
+
 # Aliases
 alias ag="ag --path-to-ignore ~/.agignore"
 alias be="RUBYOPT=W0 bundle exec"
@@ -77,3 +84,4 @@ function title() {
     ;;
   esac
 }
+source /usr/local/dev-env/ansible/mac_profile

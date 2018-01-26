@@ -120,6 +120,9 @@ map <Leader>a :call RunAllSpecs()<CR>
 
 let g:rspec_command = "Dispatch spring rspec {spec}"
 
+" Do not open NERDTree on startup
+let g:nerdtree_tabs_open_on_gui_startup=0
+
 " -- Airline
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}

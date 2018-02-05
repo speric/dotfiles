@@ -8,6 +8,7 @@ vendor
 app/assets/images
 node_modules
 bundle*.js
+bundle*.css
 *.map
 frontend/node_modules
 public

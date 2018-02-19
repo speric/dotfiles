@@ -7,6 +7,7 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
+Plug 'kristijanhusak/vim-carbon-now-sh'
 Plug 'lilydjwg/colorizer'
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'jsx'] }
 Plug 'othree/html5.vim'
@@ -106,6 +107,9 @@ inoremap pry require 'pry'; binding.pry
 " Reformat visual selection as JSON
 noremap <Leader>j !json_reformat<CR>
 
+" Copy selected text to https://carbon.now.sh/
+noremap <Leader>c :CarbonNowSh<CR>
+
 " Get off my lawn
 " nnoremap <Left> :echoe "Use h"<CR>
 " nnoremap <Right> :echoe "Use l"<CR>
@@ -119,6 +123,7 @@ map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
 let g:rspec_command = "Dispatch spring rspec {spec}"
+let g:carbon_now_sh_browser = 'open'
 
 " Do not open NERDTree on startup
 let g:nerdtree_tabs_open_on_gui_startup=0

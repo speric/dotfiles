@@ -38,6 +38,7 @@ alias flush_dns = "sudo killall -HUP mDNSResponder; \
   sudo dscacheutil -flushcache; \
   sudo killall -HUP mDNSResponder"
 alias flush_redis="redis-cli flushall"
+alias fr="flush_redis"
 alias fs="foreman start"
 alias gcm="git co master"
 alias giton="git checkout"

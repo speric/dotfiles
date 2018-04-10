@@ -32,7 +32,7 @@ alias deploy="git co master && git pull && git push dokku master"
 alias devtail="tail -f ./log/development.log"
 alias effincamera="sudo killall VDCAssistant"
 alias fe="(cd frontend && npm start)"
-alias flush_dns = "sudo killall -HUP mDNSResponder; \
+alias flush_dns="sudo killall -HUP mDNSResponder; \
   sudo killall mDNSResponderHelper; \
   sudo dscacheutil -flushcache; \
   sudo dscacheutil -flushcache; \

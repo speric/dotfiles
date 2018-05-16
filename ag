@@ -13,3 +13,5 @@ bundle*.css
 frontend/node_modules
 public
 .git
+activities.json
+spec/vcr

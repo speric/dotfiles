@@ -128,6 +128,9 @@ let g:carbon_now_sh_browser = 'open'
 " Do not open NERDTree on startup
 let g:nerdtree_tabs_open_on_gui_startup=0
 
+" MRU Max entries
+let MRU_Max_Entries = 20
+
 " -- Airline
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}

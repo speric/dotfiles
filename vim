@@ -28,7 +28,6 @@ Plug 'trevordmiller/nova-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/Align'
-Plug 'yegappan/mru'
 
 call plug#end()
 
@@ -78,7 +77,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 noremap <C-t> :A<CR>
 
 " Show recently opened files
-noremap <C-f> :MRU<CR>
+noremap <C-f> :History<CR>
 
 " Open FZF
 noremap <C-p> :FZF<CR>
@@ -127,9 +126,6 @@ let g:carbon_now_sh_browser = 'open'
 
 " Do not open NERDTree on startup
 let g:nerdtree_tabs_open_on_gui_startup=0
-
-" MRU Max entries
-let MRU_Max_Entries = 20
 
 " -- Airline
 if !exists('g:airline_symbols')

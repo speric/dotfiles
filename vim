@@ -13,7 +13,6 @@ Plug 'mxw/vim-jsx', { 'for': ['javascript', 'jsx'] }
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'jsx'] }
 Plug 'rking/ag.vim'
-Plug 'scrooloose/nerdtree'
 Plug 'szw/vim-tags'
 Plug 'thoughtbot/vim-rspec'
 Plug 'tpope/vim-dispatch'
@@ -36,7 +35,6 @@ syntax on                  " Turn on color syntax highlighting
 syntax enable
 set t_Co=256
 colorscheme nova
-let NERDTreeShowHidden=1   " Show hidden files in NERDTree
 
 set encoding=utf-8
 set number                           " Show line numbers
@@ -88,8 +86,11 @@ noremap <SPACE> :noh<CR>
 " Copy current filename to system clipboard (wonky but works for now)
 noremap <Leader>yf :!echo % \| pbcopy<CR><CR>
 
-" Toggle NERDTree
-noremap <Leader>m :NERDTreeToggle<CR>
+" Toggle netrw
+noremap <Leader>m :Explore<CR>
+
+" Close all except this window
+noremap <Leader>o :only<CR>
 
 " Remove whitespace
 noremap <Leader>w :FixWhitespace<CR>
@@ -97,7 +98,7 @@ noremap <Leader>w :FixWhitespace<CR>
 " Backslash as shortcut to ag
 nnoremap \ :Ag<SPACE>
 
-" Search for the word under cursor
+" Shift+K to search for the word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " When in insert mode, expand `pry`
@@ -124,8 +125,10 @@ map <Leader>a :call RunAllSpecs()<CR>
 let g:rspec_command = "Dispatch spring rspec {spec}"
 let g:carbon_now_sh_browser = 'open'
 
-" Do not open NERDTree on startup
-let g:nerdtree_tabs_open_on_gui_startup=0
+" netrw customizations
+let g:netrw_liststyle=3
+let g:netrw_banner=0
+let g:netrw_winsize=20
 
 " -- Airline
 if !exists('g:airline_symbols')
@@ -163,38 +166,3 @@ command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
-
-" BufRead seems more appropriate here but for some reason the final `wincmd p` doesn't work if we do that.
-autocmd VimEnter COMMIT_EDITMSG call OpenCommitMessageDiff()
-function OpenCommitMessageDiff()
-  " Save the contents of the z register
-  let old_z = getreg("z")
-  let old_z_type = getregtype("z")
-
-  try
-    call cursor(1, 0)
-    let diff_start = search("^diff --git")
-    if diff_start == 0
-      " There's no diff in the commit message; generate our own.
-      let @z = system("git diff --cached -M -C")
-    else
-      " Yank diff from the bottom of the commit message into the z register
-      :.,$yank z
-      call cursor(1, 0)
-    endif
-
-    " Paste into a new buffer
-    vnew
-    normal! V"zP
-  finally
-    " Restore the z register
-    call setreg("z", old_z, old_z_type)
-  endtry
-
-  " Configure the buffer
-  set filetype=diff noswapfile nomodified readonly
-  silent file [Changes\ to\ be\ committed]
-
-  " Get back to the commit message
-  wincmd p
-endfunction

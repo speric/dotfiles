@@ -128,7 +128,6 @@ let g:carbon_now_sh_browser = 'open'
 " netrw customizations
 let g:netrw_liststyle=3
 let g:netrw_banner=0
-let g:netrw_winsize=20
 
 " -- Airline
 if !exists('g:airline_symbols')

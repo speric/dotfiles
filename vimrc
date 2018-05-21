@@ -5,6 +5,7 @@ call plug#begin()
 
 Plug 'hail2u/vim-css3-syntax'
 Plug 'HerringtonDarkholme/yats.vim'
+Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'kristijanhusak/vim-carbon-now-sh'
@@ -14,7 +15,6 @@ Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'jsx'] }
 Plug 'rking/ag.vim'
 Plug 'szw/vim-tags'
-Plug 'thoughtbot/vim-rspec'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -116,13 +116,15 @@ noremap <Leader>c :CarbonNowSh<CR>
 " nnoremap <Up> :echoe "Use k"<CR>
 " nnoremap <Down> :echoe "Use j"<CR>
 
-" vim-rspec
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
+" vim-test
+map <Leader>t :TestFile<CR>
+map <Leader>s :TestNearest<CR>
+map <Leader>l :TestLast<CR>
+map <Leader>a :TestSuite<CR>
 
-let g:rspec_command = "Dispatch bin/rspec {spec}"
+let test#strategy = "dispatch"
+let test#ruby#rspec#executable = 'bin/rspec --format doc --no-color'
+
 let g:carbon_now_sh_browser = 'open'
 
 " netrw customizations

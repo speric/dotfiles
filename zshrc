@@ -50,7 +50,7 @@ alias recent="git recent"
 alias reload="source $HOME/.zshrc"
 alias servers="fs --procfile=Procfile.local"
 alias squash="git rebase -i master"
-alias sr="bin/rspec --no-profile"
+alias sr="bin/rspec --no-profile --tty"
 alias srf="sr --only-failures"
 alias tag="ctags -R \
   --exclude=.git \

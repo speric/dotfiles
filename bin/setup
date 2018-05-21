@@ -18,8 +18,8 @@ fi
 echo "[dotfiles] Linking dotfiles..."
 ln -s $(pwd)/git $HOME/.gitconfig
 ln -s $(pwd)/gitignore $HOME/.gitignore_global
-ln -s $(pwd)/vim $HOME/.vimrc
-ln -s $(pwd)/zsh $HOME/.zshrc
+ln -s $(pwd)/vimrc $HOME/.vimrc
+ln -s $(pwd)/zshrc $HOME/.zshrc
 ln -s $(pwd)/gem $HOME/.gemrc
 ln -s $(pwd)/pry $HOME/.pryrc
 ln -s $(pwd)/rvm $HOME/.rvmrc

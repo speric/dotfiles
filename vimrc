@@ -122,7 +122,7 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
-let g:rspec_command = "Dispatch spring rspec {spec}"
+let g:rspec_command = "Dispatch bin/rspec {spec}"
 let g:carbon_now_sh_browser = 'open'
 
 " netrw customizations

@@ -1,5 +1,3 @@
-set nocompatible
-
 " -- Plug
 call plug#begin()
 

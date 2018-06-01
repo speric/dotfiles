@@ -23,7 +23,7 @@ then
 fi
 
 # Aliases
-alias ag="ag --path-to-ignore ~/.agignore -o"
+alias ag="ag --path-to-ignore ~/.agignore"
 alias be="RUBYOPT=W0 bundle exec"
 alias clint="(cd frontend && npm run lint)"
 alias console="bin/rails console"

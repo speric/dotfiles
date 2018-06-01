@@ -6,7 +6,6 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
-Plug 'kristijanhusak/vim-carbon-now-sh'
 Plug 'lilydjwg/colorizer'
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'jsx'] }
 Plug 'othree/html5.vim'
@@ -105,14 +104,8 @@ inoremap pry require 'pry'; binding.pry
 " Reformat visual selection as JSON
 noremap <Leader>j !json_reformat<CR>
 
-" Copy selected text to https://carbon.now.sh/
-noremap <Leader>c :CarbonNowSh<CR>
-
-" Get off my lawn
-" nnoremap <Left> :echoe "Use h"<CR>
-" nnoremap <Right> :echoe "Use l"<CR>
-" nnoremap <Up> :echoe "Use k"<CR>
-" nnoremap <Down> :echoe "Use j"<CR>
+" Open a terminal session in a vertical split
+noremap <Leader>c :vertical terminal<CR>
 
 " vim-test
 map <Leader>t :TestFile<CR>
@@ -122,8 +115,6 @@ map <Leader>a :TestSuite<CR>
 
 let test#strategy = "dispatch"
 let test#ruby#rspec#executable = 'bin/rspec --format doc --no-color'
-
-let g:carbon_now_sh_browser = 'open'
 
 " netrw customizations
 let g:netrw_liststyle=3

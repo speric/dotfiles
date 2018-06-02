@@ -121,7 +121,7 @@ endfunction
 
 let g:test#custom_strategies = {'terminal_split': function('TerminalSplit')}
 let g:test#strategy = 'terminal_split'
-let test#ruby#rspec#executable = 'bin/rspec --format doc'
+let test#ruby#rspec#executable = 'bin/rspec'
 
 " netrw customizations
 let g:netrw_liststyle=3

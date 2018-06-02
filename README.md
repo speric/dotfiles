@@ -2,6 +2,8 @@
 
 A simple set of [dotfiles](http://dotfiles.github.com/) and development dependencies.
 
+![screenshot](https://cl.ly/0v0s0Z0T3f11/Image%202018-06-02%20at%2011.47.44%20AM.png)
+
 ### Installation
 
 ```

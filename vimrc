@@ -12,7 +12,6 @@ Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'jsx'] }
 Plug 'rking/ag.vim'
 Plug 'szw/vim-tags'
-Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
@@ -113,8 +112,16 @@ map <Leader>s :TestNearest<CR>
 map <Leader>l :TestLast<CR>
 map <Leader>a :TestSuite<CR>
 
-let test#strategy = "dispatch"
-let test#ruby#rspec#executable = 'bin/rspec --format doc --no-color'
+" vim-test
+" Tests will be run in a vertical terminal split
+function! TerminalSplit(cmd)
+  vsp
+  call term_start(['/bin/sh', '-c', a:cmd], {'curwin':1})
+endfunction
+
+let g:test#custom_strategies = {'terminal_split': function('TerminalSplit')}
+let g:test#strategy = 'terminal_split'
+let test#ruby#rspec#executable = 'bin/rspec --format doc'
 
 " netrw customizations
 let g:netrw_liststyle=3

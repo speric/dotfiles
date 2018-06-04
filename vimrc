@@ -79,6 +79,12 @@ noremap <C-p> :FZF<CR>
 " Clear search highlights
 noremap <SPACE> :noh<CR>
 
+" Shift + arrow keys to resize splits
+noremap <S-Up>    <C-W>+
+noremap <S-Down>  <C-W>-
+noremap <S-Left>  3<C-W>>
+noremap <S-Right> 3<C-W><
+
 " Copy current filename to system clipboard (wonky but works for now)
 noremap <Leader>yf :!echo % \| pbcopy<CR><CR>
 

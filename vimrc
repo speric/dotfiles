@@ -114,7 +114,7 @@ map <Leader>a :TestSuite<CR>
 
 " vim-test
 " Tests will be run in a vertical terminal split
-function! TerminalSplit(cmd)
+function! TerminalSplit(cmd) abort
   vsp
   call term_start(['/bin/sh', '-c', a:cmd], {'curwin':1})
 endfunction

@@ -26,8 +26,8 @@ Plug 'vim-scripts/Align'
 
 call plug#end()
 
-let mapleader = ","        " Remap leader to ','
-syntax on                  " Turn on color syntax highlighting
+let mapleader = "," " Remap leader to ','
+syntax on           " Turn on color syntax highlighting
 syntax enable
 set t_Co=256
 colorscheme nova

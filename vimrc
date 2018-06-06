@@ -109,14 +109,17 @@ inoremap pry require 'pry'; binding.pry
 " Reformat visual selection as JSON
 noremap <Leader>j !json_reformat<CR>
 
-" Open a terminal session in a vertical split
-noremap <Leader>c :vertical terminal<CR>
+" Close all splits except the current one, then
+" open a terminal session in a vertical split
+noremap <Leader>c :only<CR> :vertical terminal<CR>
 
 " vim-test
-map <Leader>t :TestFile<CR>
-map <Leader>s :TestNearest<CR>
-map <Leader>l :TestLast<CR>
-map <Leader>a :TestSuite<CR>
+" Close all splits except the current one, then
+" run the test(s)
+map <Leader>t :only<CR> :TestFile<CR>
+map <Leader>s :only<CR> :TestNearest<CR>
+map <Leader>l :only<CR> :TestLast<CR>
+map <Leader>a :only<CR> :TestSuite<CR>
 
 " vim-test
 " Tests will be run in a vertical terminal split

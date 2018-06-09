@@ -5,7 +5,7 @@ Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
-Plug 'lilydjwg/colorizer'
+Plug 'lilydjwg/colorizer', { 'for': 'css' }
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'jsx'] }
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'jsx'] }

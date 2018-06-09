@@ -1,8 +1,7 @@
 " -- Plug
 call plug#begin()
 
-Plug 'hail2u/vim-css3-syntax'
-Plug 'HerringtonDarkholme/yats.vim'
+Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'

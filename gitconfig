@@ -36,11 +36,8 @@
 
   short-recent = "for-each-ref --count=25 --sort=-committerdate refs/heads/ --format='%(refname:short)'"
 
-  # +review+ shows changes in the remote branch that your current local branch does not have
-  review = !"git log `git cbranch`..`git rbranch`"
-
   # +rreview+ shows changes in your local branch that its remote branch does not have
-  rreview = !"git log `git rbranch`..`git cbranch`"
+  review = !"git log `git rbranch`..`git cbranch`"
 
   # +pushr+ - pushes the current branch to the remote origin
   pushr = !"git push --set-upstream origin `git cbranch`"

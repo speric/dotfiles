@@ -16,7 +16,7 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
 fi
 
 echo "[dotfiles] Linking dotfiles..."
-ln -s $(pwd)/git $HOME/.gitconfig
+ln -s $(pwd)/gitconfig $HOME/.gitconfig
 ln -s $(pwd)/gitignore $HOME/.gitignore_global
 ln -s $(pwd)/vimrc $HOME/.vimrc
 ln -s $(pwd)/zshrc $HOME/.zshrc

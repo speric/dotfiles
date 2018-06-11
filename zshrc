@@ -96,3 +96,4 @@ function title() {
   esac
 }
 source /usr/local/dev-env/ansible/mac_profile
+[ -n "$DESK_ENV" ] && source "$DESK_ENV" || true

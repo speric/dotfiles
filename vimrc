@@ -22,6 +22,7 @@ Plug 'trevordmiller/nova-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/Align'
+Plug 'w0rp/ale'
 
 call plug#end()
 
@@ -135,6 +136,9 @@ let test#ruby#rspec#executable = 'bin/rspec'
 let g:netrw_liststyle=3
 let g:netrw_banner=0
 
+" bind \ (backward slash) to grep shortcut
+command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+
 " -- Airline
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
@@ -164,8 +168,10 @@ let g:fzf_colors =
   \ 'header':  ['fg', 'Comment'] }
 let g:fzf_buffers_jump = 1
 
-" bind \ (backward slash) to grep shortcut
-command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+" -- ALE
+let g:ale_lint_delay = 500
+let g:ale_sign_error = '✖'
+let g:ale_sign_warning = '⚠'
 
 " Remember last position in a file
 if has("autocmd")

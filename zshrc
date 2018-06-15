@@ -65,6 +65,7 @@ alias tag="ctags -R \
   --exclude=tmp \
   --exclude=vendor \
   ."
+alias touchbar="pkill 'Touch Bar agent'; killall 'ControlStrip';"
 alias testtail="tail -f ./log/test.log"
 alias unhitch="hitch -u"
 alias vi="vim"

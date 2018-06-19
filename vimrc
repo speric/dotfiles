@@ -170,7 +170,7 @@ let g:fzf_colors =
 let g:fzf_buffers_jump = 1
 
 " -- ALE
-let g:ale_lint_delay = 500
+let g:ale_lint_delay = 1000
 let g:ale_sign_error = '✖'
 let g:ale_sign_warning = '⚠'
 

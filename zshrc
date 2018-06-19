@@ -98,3 +98,5 @@ function title() {
 }
 source /usr/local/dev-env/ansible/mac_profile
 [ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

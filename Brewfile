@@ -2,6 +2,7 @@ tap 'homebrew/services'
 
 brew 'git'
 brew 'ack'
+brew 'bat'
 brew 'ctags'
 brew 'exif'
 brew 'fzf'

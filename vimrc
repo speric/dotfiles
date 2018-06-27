@@ -22,7 +22,6 @@ Plug 'trevordmiller/nova-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/Align'
-Plug 'w0rp/ale'
 
 call plug#end()
 
@@ -168,11 +167,6 @@ let g:fzf_colors =
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
 let g:fzf_buffers_jump = 1
-
-" -- ALE
-let g:ale_lint_delay = 1000
-let g:ale_sign_error = '✖'
-let g:ale_sign_warning = '⚠'
 
 " Remember last position in a file
 if has("autocmd")

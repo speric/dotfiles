@@ -46,6 +46,7 @@ alias giton="git checkout"
 alias mini="ruby -Ilib:test"
 alias release="gcm && git pull && bin/rake release_notes | pbcopy"
 alias reset_author="git commit --amend --reset-author"
+alias reset_touchbar="pkill 'Touch Bar agent'; killall 'ControlStrip';"
 alias rs="bin/rspec --no-profile" # --order defined
 alias recent="git recent"
 alias reload="source $HOME/.zshrc"
@@ -66,7 +67,6 @@ alias tag="ctags -R \
   --exclude=tmp \
   --exclude=vendor \
   ."
-alias touchbar="pkill 'Touch Bar agent'; killall 'ControlStrip';"
 alias testtail="tail -f ./log/test.log"
 alias unhitch="hitch -u"
 alias vi="vim"

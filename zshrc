@@ -25,7 +25,7 @@ fi
 # Aliases
 alias ag="ag --path-to-ignore ~/.agignore"
 alias be="RUBYOPT=W0 bundle exec"
-alias clean-branches="git remote prune origin && git branch -vv | grep 'origin/.*: gone]' | awk '{print $1}' | xargs git branch -D"
+alias clean-branches="(git remote prune origin) && git branch -vv | grep 'origin/.*: gone]' | awk '{print $1}' | xargs git branch -D"
 alias clint="(cd frontend && npm run lint)"
 alias console="bin/rails console"
 alias cuke="bin/cucumber"

@@ -33,8 +33,13 @@ curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs \
 
 echo "[dotfiles] Downloading vim color themes..."
 mkdir $HOME/.vim/colors
-(cd $HOME/.vim/colors && wget https://raw.githubusercontent.com/chriskempson/tomorrow-theme/master/vim/colors/Tomorrow-Night.vim)
-(cd $HOME/.vim/colors && wget https://raw.githubusercontent.com/chriskempson/tomorrow-theme/master/vim/colors/Tomorrow.vim)
+(cd $HOME/.vim/colors && curl -O https://raw.githubusercontent.com/chriskempson/tomorrow-theme/master/vim/colors/Tomorrow-Night.vim)
+(cd $HOME/.vim/colors && curl -O https://raw.githubusercontent.com/chriskempson/tomorrow-theme/master/vim/colors/Tomorrow.vim)
+
+echo "[dotfiles] Downloading iTerm color themes..."
+mkdir $HOME/.iterm
+(cd $HOME/.iterm && curl -O https://raw.githubusercontent.com/trevordmiller/nova-iterm/master/build/nova.itermcolors)
+(cd $HOME/.iterm && curl -O https://raw.githubusercontent.com/MartinSeeler/iterm2-material-design/master/material-design-colors.itermcolors)
 
 echo "[dotfiles] Configuring fzf command line helpers..."
 $(brew --prefix)/opt/fzf/install

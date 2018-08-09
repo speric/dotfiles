@@ -32,7 +32,7 @@ alias cuke="bin/cucumber"
 alias deploy="git co master && git pull && git push dokku master"
 alias devtail="tail -f ./log/development.log"
 alias effincamera="sudo killall VDCAssistant"
-alias fe="(cd frontend && npm start)"
+alias fe="(cd frontend && yarn start)"
 alias flush_dns="sudo killall -HUP mDNSResponder; \
   sudo killall mDNSResponderHelper; \
   sudo dscacheutil -flushcache; \
@@ -66,6 +66,7 @@ alias tag="ctags -R \
   --exclude=spec \
   --exclude=tmp \
   --exclude=vendor \
+  --exclude=public \
   ."
 alias testtail="tail -f ./log/test.log"
 alias unhitch="hitch -u"

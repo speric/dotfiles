@@ -32,3 +32,4 @@ Much of what's contained in this repo was lovingly inspired by, or plain stolen 
 * [Wynn Netherland](https://github.com/pengwynn)
 * [Christopher Moeller](https://github.com/cmoel)
 * [Phillip Ridlen](https://github.com/philtr)
+* [Evan Travers](https://github.com/evantravers)

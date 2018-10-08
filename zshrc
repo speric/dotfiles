@@ -7,15 +7,21 @@ plugins=()
 
 source $ZSH/oh-my-zsh.sh
 
+typeset -U path
+
+path+=(
+  ${HOME}/.rvm/bin
+  /usr/local/opt/mysql@5.6/bin
+  /usr/local/opt/node@6/bin
+)
+
 export EDITOR="vi"
-export PATH="$PATH:$HOME/.rvm/bin"
-export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
 export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
 
 setopt auto_cd
 cdpath=($HOME/dev)
 
-# use .localrc for stuff you don't want
+# .localrc: for stuff you don't want
 # in your public, versioned repo
 if [[ -a ~/.localrc ]]
 then
@@ -99,7 +105,7 @@ function title() {
     ;;
   esac
 }
-source /usr/local/dev-env/ansible/mac_profile
-[ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
+# source /usr/local/dev-env/ansible/mac_profile
+# [ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

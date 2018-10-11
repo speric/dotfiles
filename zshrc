@@ -13,6 +13,7 @@ path+=(
   ${HOME}/.rvm/bin
   /usr/local/opt/mysql@5.6/bin
   /usr/local/opt/node@6/bin
+  /usr/local/sbin
 )
 
 export EDITOR="vi"

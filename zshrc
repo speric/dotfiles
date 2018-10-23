@@ -32,7 +32,6 @@ fi
 # Aliases
 alias ag="ag --path-to-ignore ~/.agignore"
 alias be="RUBYOPT=W0 bundle exec"
-alias clean-branches="git branch -vv | grep 'origin/.*: gone]' | awk '{print $1}' | xargs git branch -D"
 alias clint="(cd frontend && npm run lint)"
 alias console="bin/rails console"
 alias cuke="bin/cucumber"
@@ -51,7 +50,6 @@ alias fs="foreman start"
 alias gcm="git co master"
 alias giton="git checkout"
 alias mini="ruby -Ilib:test"
-alias prune="git remote prune origin"
 alias release="gcm && git pull && bin/rake release_notes | pbcopy"
 alias reset_author="git commit --amend --reset-author"
 alias reset_touchbar="pkill 'Touch Bar agent'; killall 'ControlStrip';"
@@ -86,6 +84,12 @@ alias vi="vim"
 # h/t @jeremywrowe
 cb() {
   git checkout $(git short-recent | fzf)
+}
+
+# Delete local branches whose remote branch has been deleted
+clean_branches() {
+  git remote prune origin
+  git branch -vv | grep "origin/.*: gone]" | awk '{print $1}' | xargs git branch -D
 }
 
 # From https://github.com/pengwynn/dotfiles/blob/master/zsh/window.zsh

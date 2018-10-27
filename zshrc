@@ -92,6 +92,12 @@ clean_branches() {
   git branch -vv | grep "origin/.*: gone]" | awk '{print $1}' | xargs git branch -D
 }
 
+fresh() {
+  git pull
+  clean_branches
+  bin/fresh
+}
+
 # From https://github.com/pengwynn/dotfiles/blob/master/zsh/window.zsh
 # Sets the window title nicely no matter where you are
 function title() {

@@ -1,0 +1,6 @@
+# !/bin/sh
+# Usage: git-cleanup
+# Delete any local branches whose remote has been deleted
+
+git remote prune origin
+git branch -vv | grep "origin/.*: gone]" | awk '{print $1}' | xargs git branch -D

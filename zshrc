@@ -11,6 +11,7 @@ typeset -U path
 
 path+=(
   ${HOME}/.rvm/bin
+  ${HOME}/dev/dotfiles/bin
   /usr/local/opt/mysql@5.6/bin
   /usr/local/opt/node@6/bin
   /usr/local/sbin
@@ -86,15 +87,9 @@ cb() {
   git checkout $(git short-recent | fzf)
 }
 
-# Delete local branches whose remote branch has been deleted
-clean_branches() {
-  git remote prune origin
-  git branch -vv | grep "origin/.*: gone]" | awk '{print $1}' | xargs git branch -D
-}
-
 fresh() {
   git pull
-  clean_branches
+  git cleanup
   bin/fresh
 }
 

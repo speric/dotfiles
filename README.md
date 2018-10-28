@@ -7,7 +7,7 @@ A simple set of [dotfiles](http://dotfiles.github.com/) and development dependen
 ### Installation
 
 ```
-bin/setup
+script/setup
 ```
 
 ### Post-Installation

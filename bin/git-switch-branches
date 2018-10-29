@@ -1,8 +1,8 @@
 # !/bin/sh
 # Usage: git-switch-branches
 # Use `fzf` to browse/select a recent git branch
-# h/t @jeremywrowe
 # Requires https://github.com/junegunn/fzf
+# h/t @jeremywrowe
 
 if command -v fzf >/dev/null 2>&1; then
   git checkout $(git short-recent | fzf)

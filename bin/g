@@ -1,0 +1,11 @@
+# !/bin/sh
+# Usage: g
+# Use `g` as a shortcut to `git`
+# With no args, call `git status`
+# h/t @pengwynn
+
+if [[ $# > 0 ]]; then
+  git "$@"
+else
+  git st
+fi

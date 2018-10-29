@@ -55,17 +55,6 @@ alias vi="vim"
 
 # Functions
 
-# Use `g` as a shortcut to `git`
-# With no args, call `git status`
-# h/t @pengwynn
-function g() {
-  if [[ $# > 0 ]]; then
-    git "$@"
-  else
-    git st
-  fi
-}
-
 # Use `fzf` to browse/run recent specs
 recent_specs() {
   $(history | cut -c 8- | grep spec | fzf)
@@ -73,8 +62,9 @@ recent_specs() {
 
 # Pull latest, delete merged branches, rebuild dev env
 fresh() {
-  git pull
-  git cleanup
+  g cm
+  g pull
+  g cleanup
   bin/fresh
 }
 

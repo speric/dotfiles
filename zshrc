@@ -23,10 +23,8 @@ export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
 setopt auto_cd
 cdpath=($HOME/dev)
 
-# .localrc: for stuff you don't want
-# in your public, versioned repo
-if [[ -a ~/.localrc ]]
-then
+# .localrc: for stuff you don't want in your public, versioned repo
+if [[ -a ~/.localrc ]]; then
   source ~/.localrc
 fi
 
@@ -43,15 +41,12 @@ alias effincamera="sudo killall VDCAssistant"
 alias fe="(cd frontend && yarn start)"
 alias flush_dns="sudo killall -HUP mDNSResponder; sudo killall mDNSResponderHelper; sudo dscacheutil -flushcache"
 alias flush_redis="redis-cli flushall"
-alias fr="flush_redis"
-alias fs="foreman start"
 alias mini="ruby -Ilib:test"
 alias release="g cm && g pull && bin/rake release_notes | pbcopy"
 alias reset_touchbar="pkill 'Touch Bar agent'; killall 'ControlStrip';"
-alias rs="bin/rspec --no-profile" # --order defined
+alias rs="bin/rspec --no-profile"
 alias reload="source $HOME/.zshrc"
 alias rs="recent_specs"
-alias servers="fs --procfile=Procfile.local"
 alias sr="bin/rspec --no-profile --tty"
 alias srf="sr --only-failures"
 alias testtail="tail -f ./log/test.log"

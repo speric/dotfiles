@@ -41,11 +41,7 @@ alias deploy="g co master && g pull && g push dokku master"
 alias devtail="tail -f ./log/development.log"
 alias effincamera="sudo killall VDCAssistant"
 alias fe="(cd frontend && yarn start)"
-alias flush_dns="sudo killall -HUP mDNSResponder; \
-  sudo killall mDNSResponderHelper; \
-  sudo dscacheutil -flushcache; \
-  sudo dscacheutil -flushcache; \
-  sudo killall -HUP mDNSResponder"
+alias flush_dns="sudo killall -HUP mDNSResponder; sudo killall mDNSResponderHelper; sudo dscacheutil -flushcache"
 alias flush_redis="redis-cli flushall"
 alias fr="flush_redis"
 alias fs="foreman start"

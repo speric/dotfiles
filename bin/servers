@@ -1,0 +1,15 @@
+# !/bin/sh
+# Usage: servers
+# Boot up local dev servers, looking for:
+# * Procfile.local
+# * Procfile
+# If those don't exist, then:
+# * bin/rails server
+
+if [ -f Procfile.local ]; then
+  foreman start --procfile=Procfile.local
+elif [ -f Procfile ]; then
+  foreman start
+else
+  bin/rails server
+fi

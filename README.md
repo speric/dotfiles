@@ -10,18 +10,8 @@ A simple set of [dotfiles](http://dotfiles.github.com/) and development dependen
 script/setup
 ```
 
-### Post-Installation
-
-#### Vim Plugins
-
-To install Vim plugins (managed using [plug.vim](https://github.com/junegunn/vim-plug)):
-
- * Open Vim
- * Run `:PlugInstall`
- * Restart Vim
-
 ### Additional Settings
-* iterm2 Color Scheme: [Tomorrow Night](https://github.com/chriskempson/tomorrow-theme/blob/master/iTerm2/Tomorrow%20Night.itermcolors)
+* iterm2 Color Scheme: [nova](https://github.com/trevordmiller/nova-iterm)
 * iterm2 Font: 22pt [Input Mono Narrow Light](http://input.fontbureau.com/info/)
 
 ### Thanks

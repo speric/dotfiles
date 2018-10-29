@@ -1,0 +1,16 @@
+# !/bin/sh
+
+ctags -R \
+  --exclude=.git \
+  --exclude=app/assets/javascripts \
+  --exclude=app/views \
+  --exclude=artifacts \
+  --exclude=db \
+  --exclude=frontend \
+  --exclude=lib/console \
+  --exclude=log \
+  --exclude=spec \
+  --exclude=tmp \
+  --exclude=vendor \
+  --exclude=public \
+  .

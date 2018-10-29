@@ -27,6 +27,12 @@
   # +cbranch+ returns the current branch you are on
   cbranch = !"git branch | grep '*' | cut -f2 -d' '"
 
+  cm = !"git checkout master"
+
+  fresh = !"git reset --hard HEAD"
+
+  on = !"git checkout"
+
   # +rbranch+ returns the remote branch for the current branch you are on assuming it
   # is named the same
   rbranch = !"git branch -r | grep -E \"/`git cbranch`$\" | grep -v -e \"->\""
@@ -35,6 +41,8 @@
   recent = "for-each-ref --count=25 --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
 
   short-recent = "for-each-ref --count=25 --sort=-committerdate refs/heads/ --format='%(refname:short)'"
+
+  squash = !"git rebase -i master"
 
   # +rreview+ shows changes in your local branch that its remote branch does not have
   review = !"git log `git rbranch`..`git cbranch`"

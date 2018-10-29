@@ -33,10 +33,11 @@ fi
 # Aliases
 alias ag="ag --path-to-ignore ~/.agignore"
 alias be="RUBYOPT=W0 bundle exec"
+alias cb="git switch-branches"
 alias clint="(cd frontend && npm run lint)"
 alias console="bin/rails console"
 alias cuke="bin/cucumber"
-alias deploy="git co master && git pull && git push dokku master"
+alias deploy="g co master && g pull && g push dokku master"
 alias devtail="tail -f ./log/development.log"
 alias effincamera="sudo killall VDCAssistant"
 alias fe="(cd frontend && yarn start)"
@@ -48,45 +49,38 @@ alias flush_dns="sudo killall -HUP mDNSResponder; \
 alias flush_redis="redis-cli flushall"
 alias fr="flush_redis"
 alias fs="foreman start"
-alias gcm="git co master"
-alias giton="git checkout"
 alias mini="ruby -Ilib:test"
-alias release="gcm && git pull && bin/rake release_notes | pbcopy"
-alias reset_author="git commit --amend --reset-author"
+alias release="g cm && g pull && bin/rake release_notes | pbcopy"
 alias reset_touchbar="pkill 'Touch Bar agent'; killall 'ControlStrip';"
 alias rs="bin/rspec --no-profile" # --order defined
-alias recent="git recent"
 alias reload="source $HOME/.zshrc"
+alias rs="recent_specs"
 alias servers="fs --procfile=Procfile.local"
-alias squash="git rebase -i master"
 alias sr="bin/rspec --no-profile --tty"
 alias srf="sr --only-failures"
-alias tag="ctags -R \
-  --exclude=.git \
-  --exclude=app/assets/javascripts \
-  --exclude=app/views \
-  --exclude=artifacts \
-  --exclude=db \
-  --exclude=frontend \
-  --exclude=lib/console \
-  --exclude=log \
-  --exclude=spec \
-  --exclude=tmp \
-  --exclude=vendor \
-  --exclude=public \
-  ."
 alias testtail="tail -f ./log/test.log"
 alias unhitch="hitch -u"
 alias vi="vim"
 
 # Functions
 
-# Use `fzf` to browse/select a recent git branch
-# h/t @jeremywrowe
-cb() {
-  git checkout $(git short-recent | fzf)
+# Use `g` as a shortcut to `git`
+# With no args, call `git status`
+# h/t @pengwynn
+function g() {
+  if [[ $# > 0 ]]; then
+    git "$@"
+  else
+    git st
+  fi
 }
 
+# Use `fzf` to browse/run recent specs
+recent_specs() {
+  $(history | cut -c 8- | grep spec | fzf)
+}
+
+# Pull latest, delete merged branches, rebuild dev env
 fresh() {
   git pull
   git cleanup

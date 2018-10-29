@@ -29,7 +29,7 @@
 
   cm = !"git checkout master"
 
-  fresh = !"git reset --hard HEAD"
+  undo = !"git reset --hard HEAD"
 
   on = !"git checkout"
 

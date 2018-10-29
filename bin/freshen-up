@@ -6,6 +6,4 @@
 g cm
 g pull
 g cleanup
-if [ -f bin/fresh ]; then
-  bin/fresh
-fi
+[[ -f bin/fresh ]] && bin/fresh

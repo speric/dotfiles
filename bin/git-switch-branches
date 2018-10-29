@@ -4,4 +4,8 @@
 # h/t @jeremywrowe
 # Requires https://github.com/junegunn/fzf
 
-git checkout $(git short-recent | fzf)
+if command -v fzf >/dev/null 2>&1; then
+  git checkout $(git short-recent | fzf)
+else
+ echo "Please install https://github.com/junegunn/fzf"
+fi

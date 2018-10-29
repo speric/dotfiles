@@ -1,0 +1,11 @@
+# !/bin/sh
+# Usage: freshen-up
+# Checkout `master`, pull the latest, delete local branches
+# whose remote has been deleted, run `bin/fresh` if it exists
+
+g cm
+g pull
+g cleanup
+if [ -f bin/fresh ]; then
+  bin/fresh
+fi

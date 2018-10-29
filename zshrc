@@ -41,6 +41,7 @@ alias effincamera="sudo killall VDCAssistant"
 alias fe="(cd frontend && yarn start)"
 alias flush_dns="sudo killall -HUP mDNSResponder; sudo killall mDNSResponderHelper; sudo dscacheutil -flushcache"
 alias flush_redis="redis-cli flushall"
+alias fresh="freshen-up"
 alias mini="ruby -Ilib:test"
 alias release="g cm && g pull && bin/rake release_notes | pbcopy"
 alias reset_touchbar="pkill 'Touch Bar agent'; killall 'ControlStrip';"
@@ -58,14 +59,6 @@ alias vi="vim"
 # Use `fzf` to browse/run recent specs
 recent_specs() {
   $(history | cut -c 8- | grep spec | fzf)
-}
-
-# Pull latest, delete merged branches, rebuild dev env
-fresh() {
-  g cm
-  g pull
-  g cleanup
-  bin/fresh
 }
 
 # From https://github.com/pengwynn/dotfiles/blob/master/zsh/window.zsh

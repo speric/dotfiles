@@ -8,7 +8,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'lilydjwg/colorizer', { 'for': 'css' }
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'jsx'] }
-Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'jsx'] }
 Plug 'rking/ag.vim'
 Plug 'szw/vim-tags'

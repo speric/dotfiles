@@ -1,0 +1,6 @@
+# !/bin/sh
+# Usage: git-nuke
+# Delete a remote branch
+# h/t @r00k
+
+git branch -D $1 && git push origin :$1

@@ -3,16 +3,20 @@
 # Generate ctags but exclude sub-directories I don't care about
 
 ctags -R \
+  --languages=ruby,javascript \
   --exclude=.git \
-  --exclude=app/assets/javascripts \
-  --exclude=app/views \
+  --exclude=_build \
+  --exclude=assets \
+  --exclude=views \
   --exclude=artifacts \
   --exclude=db \
+  --exclude=deps \
   --exclude=frontend \
   --exclude=lib/console \
   --exclude=log \
+  --exclude=node_modules \
+  --exclude=public \
   --exclude=spec \
   --exclude=tmp \
   --exclude=vendor \
-  --exclude=public \
   .

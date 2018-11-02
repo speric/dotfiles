@@ -1,0 +1,6 @@
+#!/bin/sh
+# Usage: git-amend
+# Use the last commit message and amend your stuffs.
+# h/t @pengwynn
+
+git commit --amend -C HEAD

@@ -79,7 +79,8 @@ function title() {
     ;;
   esac
 }
-# source /usr/local/dev-env/ansible/mac_profile
-# [ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+source /usr/local/dev-env/ansible/dash_profile
+[ -n "$DESK_ENV" ] && source "$DESK_ENV" || true

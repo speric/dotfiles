@@ -1,0 +1,5 @@
+# !/bin/sh
+# Usage: find_large_folders
+# Find folders > 500MB in size
+
+du -k ~/* | awk '$1 > 500000'

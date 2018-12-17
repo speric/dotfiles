@@ -1,0 +1,9 @@
+# !/bin/sh
+# Usage: yt
+# Downloads a YouTube video to the ~/Downloads folder,
+# and saves it as an mp4
+# Requires ffmpeg and youtube-dl
+
+if [[ $# > 0 ]]; then
+  (cd ~/Downloads && youtube-dl $1 -x --audio-format mp4)
+fi

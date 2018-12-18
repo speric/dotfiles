@@ -32,7 +32,7 @@ fi
 alias ag="ag --path-to-ignore ~/.agignore"
 alias be="RUBYOPT=W0 bundle exec"
 alias cb="git switch-branches"
-alias clint="(cd frontend && npm run lint)"
+alias clint="(cd frontend && yarn run lint)"
 alias console="bin/rails console"
 alias cuke="bin/cucumber"
 alias deploy="g co master && g pull && g push dokku master"

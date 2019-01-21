@@ -43,7 +43,8 @@ alias flush_dns="sudo killall -HUP mDNSResponder; sudo killall mDNSResponderHelp
 alias flush_redis="redis-cli flushall"
 alias fresh="freshen-up"
 alias mini="ruby -Ilib:test"
-alias release="g cm && g pull && bin/rake release_notes | pbcopy"
+alias migrate="bin/rails db:migrate db:test:prepare"
+alias release="g cm && g pull && bundle && bin/rake release_notes | pbcopy"
 alias reset_touchbar="pkill 'Touch Bar agent'; killall 'ControlStrip';"
 alias rs="bin/rspec --no-profile"
 alias reload="source $HOME/.zshrc"
@@ -82,5 +83,5 @@ function title() {
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-source /usr/local/dev-env/ansible/dash_profile
-[ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
+# source /usr/local/dev-env/ansible/dash_profile
+# [ -n "$DESK_ENV" ] && source "$DESK_ENV" || true

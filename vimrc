@@ -11,6 +11,7 @@ Plug 'metakirby5/codi.vim'
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'jsx'] }
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'jsx'] }
 Plug 'rking/ag.vim'
+Plug 'rust-lang/rust.vim', { 'for': ['rust'] }
 Plug 'szw/vim-tags'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-cucumber'
@@ -134,6 +135,8 @@ endfunction
 let g:test#custom_strategies = {'terminal_split': function('TerminalSplit')}
 let g:test#strategy = 'terminal_split'
 let test#ruby#rspec#executable = 'bin/rspec'
+
+let g:rustfmt_autosave = 1
 
 " netrw customizations
 let g:netrw_liststyle=3

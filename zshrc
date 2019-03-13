@@ -17,7 +17,7 @@ path+=(
   /usr/local/sbin
 )
 
-export EDITOR="vi"
+export EDITOR="vim"
 export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
 
 setopt auto_cd
@@ -83,5 +83,5 @@ function title() {
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# source /usr/local/dev-env/ansible/dash_profile
-# [ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
+source /usr/local/dev-env/ansible/dash_profile
+[ -n "$DESK_ENV" ] && source "$DESK_ENV" || true

@@ -111,7 +111,7 @@ nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 inoremap pry require 'pry'; binding.pry
 
 " Reformat visual selection as JSON
-noremap <Leader>j !json_reformat<CR>
+noremap <Leader>j :%!json_reformat<CR>
 
 " Close all splits except the current one, then
 " open a terminal session in a vertical split

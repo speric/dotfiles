@@ -66,6 +66,10 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set undofile
 set undodir=~/.vimundo/
 
+" Line length
+set textwidth=80
+set colorcolumn=+1
+
 " Remove trailing whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
 
@@ -116,6 +120,21 @@ noremap <Leader>j :%!json_reformat<CR>
 " Close all splits except the current one, then
 " open a terminal session in a vertical split
 noremap <Leader>c :only<CR> :vertical terminal<CR>
+
+" Disable arrow keys
+nnoremap <Left> :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up> :echoe "Use k"<CR>
+nnoremap <Down> :echoe "Use j"<CR>
+
+" Treat <li> and <p> tags like the block tags they are
+let g:html_indent_tags = 'li\|p'
+
+" Quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
 
 " vim-test
 " Close all splits except the current one, then

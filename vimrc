@@ -66,9 +66,9 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set undofile
 set undodir=~/.vimundo/
 
-" Line length
-set textwidth=80
-set colorcolumn=+1
+" Use hybrid line numbers
+set number relativenumber
+set nu rnu
 
 " Remove trailing whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e

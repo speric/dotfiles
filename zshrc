@@ -55,6 +55,9 @@ alias testtail="tail -f ./log/test.log"
 alias unhitch="hitch -u"
 alias vi="vim"
 
+# Wrap git with hub
+if [[ -f `command -v hub` ]] ; then alias git=hub ; fi
+
 # Functions
 
 # Use `fzf` to browse/run recent specs

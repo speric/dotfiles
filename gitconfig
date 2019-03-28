@@ -58,3 +58,5 @@
   rebase = true
 [rerere]
   enabled = 1
+[hub]
+  protocol = https

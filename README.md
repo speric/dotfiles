@@ -6,7 +6,7 @@ A simple set of [dotfiles](http://dotfiles.github.com/) and development dependen
 ![screenshot](https://cl.ly/51acc97350f3/Image%202019-04-06%20at%2011.45.38%20PM.png)
 
 ##### prompt
-![screenshot](https://cl.ly/bdcaa11474be/Image%202019-04-06%20at%2011.47.32%20PM.png)
+![screenshot](https://cl.ly/7e69a4754b88/Image%202019-04-06%20at%2011.49.16%20PM.png)
 
 ### Installation
 

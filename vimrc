@@ -148,7 +148,7 @@ map <Leader>a :only<CR> :TestSuite<CR>
 " Tests will be run in a vertical terminal split if the window size
 " allows, otherwise they will be run in a horizontal split
 function! TerminalSplit(cmd) abort
-  if winwidth('%') >= 100
+  if winwidth('%') >= 120
     vsp
   else
     9sp

@@ -9,6 +9,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'lilydjwg/colorizer', { 'for': 'css' }
 Plug 'metakirby5/codi.vim'
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'jsx'] }
+Plug 'NLKNguyen/papercolor-theme'
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'jsx'] }
 Plug 'rking/ag.vim'
 Plug 'rust-lang/rust.vim', { 'for': ['rust'] }
@@ -32,7 +33,8 @@ let mapleader = "," " Remap leader to ','
 syntax on           " Turn on color syntax highlighting
 syntax enable
 set t_Co=256
-colorscheme nova
+set background=dark
+colorscheme PaperColor
 
 set encoding=utf-8
 set number                           " Show line numbers
@@ -174,7 +176,7 @@ if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
 let g:airline_symbols.maxlinenr = ''
-let g:airline_theme='nova'
+let g:airline_theme='papercolor'
 let g:airline_powerline_fonts = 1
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''

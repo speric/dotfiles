@@ -37,6 +37,7 @@ vim +PlugInstall +qall
 echo "[dotfiles] Downloading iTerm color themes..."
 mkdir $HOME/.iterm
 (cd $HOME/.iterm && curl -O https://raw.githubusercontent.com/trevordmiller/nova-iterm/master/build/nova.itermcolors)
+(cd $HOME/.iterm && curl -O https://raw.githubusercontent.com/MartinSeeler/iterm2-material-design/master/material-design-colors.itermcolors)
 
 echo "[dotfiles] Configuring fzf command line helpers..."
 $(brew --prefix)/opt/fzf/install

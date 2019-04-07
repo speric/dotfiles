@@ -2,7 +2,7 @@
 
 A simple set of [dotfiles](http://dotfiles.github.com/) and development dependencies.
 
-![screenshot](https://cl.ly/0v0s0Z0T3f11/Image%202018-06-02%20at%2011.47.44%20AM.png)
+![screenshot](https://cl.ly/51acc97350f3/Image%202019-04-06%20at%2011.45.38%20PM.png)
 
 ### Installation
 
@@ -12,6 +12,7 @@ script/setup
 
 ### Additional Settings
 * iterm2 Color Scheme: [nova](https://github.com/trevordmiller/nova-iterm)
+* iterm2 Color Scheme: [Material Design](https://github.com/MartinSeeler/iterm2-material-design)
 * iterm2 Font: 22pt [Input Mono Narrow Light](http://input.fontbureau.com/info/)
 
 ### Thanks

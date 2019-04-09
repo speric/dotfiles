@@ -147,14 +147,9 @@ map <Leader>l :only<CR> :TestLast<CR>
 map <Leader>a :only<CR> :TestSuite<CR>
 
 " vim-test
-" Tests will be run in a vertical terminal split if the window size
-" allows, otherwise they will be run in a horizontal split
+" Tests will be run in a horizontal terminal split
 function! TerminalSplit(cmd) abort
-  if winwidth('%') >= 120
-    vsp
-  else
-    9sp
-  endif
+  9sp
   call term_start(['/bin/sh', '-c', a:cmd], {'curwin':1})
 endfunction
 

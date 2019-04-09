@@ -1,0 +1,8 @@
+# !/bin/sh
+# Usage: release
+# Checkout master branch, pull, clean up, and generate release notes
+
+g cm
+g pull
+g cleanup
+bin/rake release_notes | pbcopy

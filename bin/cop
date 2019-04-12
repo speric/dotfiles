@@ -1,0 +1,10 @@
+# !/bin/sh
+# Usage: cop
+# Run Rubocop, if .rubocop.yml exists in the current directory,
+# on files that have changes which are not on master
+
+if [ -f .rubocop.yml ]; then
+  git diff master --name-only | awk '{print $1}'  | xargs rubocop -a
+else
+  echo "No .rubocop.yml found."
+fi

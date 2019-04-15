@@ -4,5 +4,6 @@
 
 g cm
 g pull
+g prune
 g cleanup
 bin/rake release_notes | pbcopy

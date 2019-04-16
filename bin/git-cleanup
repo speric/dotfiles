@@ -2,5 +2,6 @@
 # Usage: git-cleanup
 # Delete any local branches whose remote has been deleted
 
-git remote prune origin
-git branch -vv | grep "origin/.*: gone]" | awk '{print $1}' | xargs git branch -D
+g pull
+g remote prune origin
+g branch -vv | grep "origin/.*: gone]" | awk '{print $1}' | xargs g branch -D

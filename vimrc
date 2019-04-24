@@ -150,8 +150,6 @@ map <Leader>s :only<CR> :TestNearest<CR>
 map <Leader>l :only<CR> :TestLast<CR>
 map <Leader>a :only<CR> :TestSuite<CR>
 
-"
-
 " vim-test
 " Tests will be run in a horizontal terminal split
 function! TerminalSplit(cmd) abort

@@ -201,7 +201,6 @@ let g:fzf_buffers_jump = 1
 
 " -- ALE
 
-let g:ale_list_window_size = 3
 let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_enter = 1
 let g:ale_lint_on_save = 1

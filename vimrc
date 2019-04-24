@@ -196,7 +196,6 @@ let g:fzf_colors =
   \ 'header':  ['fg', 'Comment'] }
 let g:fzf_buffers_jump = 1
 
-
 " -- ALE
 
 " when to lint

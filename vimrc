@@ -124,6 +124,9 @@ noremap <Leader>j :%!json_reformat<CR>
 " open a terminal session in a vertical split
 noremap <Leader>c :only<CR> :vertical terminal<CR>
 
+" Open quickfix window, 5 lines tall
+noremap <Leader>q :copen5<CR>
+
 " Disable arrow keys
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
@@ -146,6 +149,8 @@ map <Leader>t :only<CR> :TestFile<CR>
 map <Leader>s :only<CR> :TestNearest<CR>
 map <Leader>l :only<CR> :TestLast<CR>
 map <Leader>a :only<CR> :TestSuite<CR>
+
+"
 
 " vim-test
 " Tests will be run in a horizontal terminal split
@@ -198,22 +203,24 @@ let g:fzf_buffers_jump = 1
 
 " -- ALE
 
-" when to lint
+let g:ale_list_window_size = 3
 let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_enter = 1
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_filetype_changed = 1
-
-" add sign column emoticons
 let g:ale_sign_error = 'e'
 let g:ale_sign_warning = 'w'
+let g:ale_sign_column_always = 1
+let g:ale_set_higlights = 1
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
 
 " message format
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
-" always show the sign column
-let g:ale_sign_column_always = 1
-let g:ale_set_higlights = 1
+" use ctrl+j/k to navigate between warnings/errors
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " reset sign column background colors
 highlight link ALEError SignColumn

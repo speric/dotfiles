@@ -1,0 +1,10 @@
+# !/bin/sh
+# Usage: deploy
+# Checkout master branch, pull, clean up, push to Heroku, run migrations
+
+g cm
+g pull
+g prune
+g cleanup
+g push heroku master
+heroku run rake db:migrate

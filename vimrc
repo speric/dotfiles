@@ -7,7 +7,6 @@ Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'lilydjwg/colorizer', { 'for': 'css' }
-Plug 'metakirby5/codi.vim'
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'jsx'] }
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'jsx'] }
@@ -204,9 +203,8 @@ let g:fzf_buffers_jump = 1
 let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_enter = 1
 let g:ale_lint_on_save = 1
-let g:ale_lint_on_filetype_changed = 1
-let g:ale_sign_error = 'e'
-let g:ale_sign_warning = 'w'
+let g:ale_sign_error = '=>'
+let g:ale_sign_warning = '->'
 let g:ale_sign_column_always = 1
 let g:ale_set_higlights = 1
 let g:ale_set_loclist = 0
@@ -219,11 +217,11 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
-" reset sign column background colors
-highlight link ALEError SignColumn
-highlight link ALEWarning SignColumn
-highlight link ALEErrorSign SignColumn
-highlight link ALEWarningSign SignColumn
+" " reset sign column background colors
+" highlight link ALEError SignColumn
+" highlight link ALEWarning SignColumn
+" highlight link ALEErrorSign SignColumn
+" highlight link ALEWarningSign SignColumn
 
 " Remember last position in a file
 if has("autocmd")

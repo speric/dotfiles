@@ -12,7 +12,7 @@ typeset -U path
 path+=(
   ${HOME}/.rvm/bin
   ${HOME}/dev/dotfiles/bin
-  /usr/local/opt/mysql@5.6/bin
+  /usr/local/opt/mysql@5.7/bin
   /usr/local/opt/node@6/bin
   /usr/local/sbin
 )

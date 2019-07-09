@@ -3,7 +3,6 @@ tags
 tmp
 spec/vcr_cassettes
 snapshot.sql
-*.sql
 vendor
 app/assets/images
 node_modules

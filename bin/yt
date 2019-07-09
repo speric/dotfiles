@@ -5,5 +5,5 @@
 # Requires ffmpeg and youtube-dl
 
 if [[ $# > 0 ]]; then
-  (cd ~/Downloads && youtube-dl $1 -x --audio-format mp4)
+  (cd ~/Downloads && youtube-dl $1 -x --audio-format mp3)
 fi

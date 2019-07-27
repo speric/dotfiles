@@ -1,3 +1,4 @@
+tap 'heroku/brew'
 tap 'homebrew/services'
 
 brew 'git'
@@ -8,7 +9,7 @@ brew 'ctags'
 brew 'exif'
 brew 'ffmpeg'
 brew 'fzf'
-brew 'heroku-toolbelt'
+brew 'heroku'
 brew 'hub'
 brew 'imagemagick'
 brew 'libyaml'

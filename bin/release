@@ -6,4 +6,5 @@ g cm
 g pull
 g prune
 g cleanup
+bundle
 bin/rake release_notes | pbcopy

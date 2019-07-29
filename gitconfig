@@ -1,6 +1,6 @@
 [core]
   editor = vim
-  excludesfile = /Users/ericfarkas/.gitignore_global
+  excludesfile = ~/.gitignore_global
 
 [user]
   name = Eric Farkas

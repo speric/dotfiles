@@ -10,18 +10,10 @@ fi
 echo "[dotfiles] Installing dependencies via Homebrew..."
 brew bundle
 
-if [ ! -d "$HOME/.oh-my-zsh" ]; then
-  echo "[dotfiles] Installing oh-my-zsh..."
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-  chsh -s /bin/zsh
-  rm -f $HOME/.zshrc
-fi
-
 echo "[dotfiles] Linking dotfiles..."
 ln -s $(pwd)/gitconfig $HOME/.gitconfig
 ln -s $(pwd)/gitignore $HOME/.gitignore_global
 ln -s $(pwd)/vimrc $HOME/.vimrc
-ln -s $(pwd)/zshrc $HOME/.zshrc
 ln -s $(pwd)/gem $HOME/.gemrc
 ln -s $(pwd)/pry $HOME/.pryrc
 ln -s $(pwd)/rvm $HOME/.rvmrc
@@ -38,11 +30,17 @@ echo "[dotfiles] Installing vim plugins..."
 vim +PlugInstall +qall
 
 echo "[dotfiles] Downloading iTerm color themes..."
-mkdir $HOME/.iterm
-(cd $HOME/.iterm && curl -O https://raw.githubusercontent.com/trevordmiller/nova-iterm/master/build/nova.itermcolors)
-(cd $HOME/.iterm && curl -O https://raw.githubusercontent.com/MartinSeeler/iterm2-material-design/master/material-design-colors.itermcolors)
+(cd $HOME/Downloads && curl -O https://raw.githubusercontent.com/MartinSeeler/iterm2-material-design/master/material-design-colors.itermcolors)
 
 echo "[dotfiles] Configuring fzf command line helpers..."
 $(brew --prefix)/opt/fzf/install
+
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+  echo "[dotfiles] Installing oh-my-zsh..."
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  rm -f $HOME/.zshrc
+  ln -s $(pwd)/zshrc $HOME/.zshrc
+  chsh -s /bin/zsh
+fi
 
 echo "[dotfiles] Done!"

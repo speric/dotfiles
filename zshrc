@@ -10,8 +10,9 @@ source $ZSH/oh-my-zsh.sh
 typeset -U path
 
 path+=(
-  ${HOME}/.rvm/bin
   ${HOME}/dev/dotfiles/bin
+  ${HOME}/.rvm/bin
+  ${HOME}/.ebcli-virtual-env/executables
   /usr/local/opt/mysql@5.7/bin
   /usr/local/opt/node@6/bin
   /usr/local/sbin
@@ -83,3 +84,4 @@ function title() {
 }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh

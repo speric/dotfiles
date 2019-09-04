@@ -20,6 +20,7 @@ ln -s $(pwd)/rvm $HOME/.rvmrc
 ln -s $(pwd)/ag $HOME/.agignore
 ln -s $(pwd)/spring $HOME/.spring.rb
 ln -s $(pwd)/speric.zsh-theme $HOME/.oh-my-zsh/themes/speric.zsh-theme
+ln -s $(pwd)/rubocop.yml $HOME/.rubocop.yml
 mkdir $HOME/.vimundo/
 
 echo "[dotfiles] Installing vim-plug..."

@@ -20,7 +20,6 @@ brew 'node'
 brew 'npm'
 brew 'openssl'
 brew 'postgres', restart_service: true
-brew 'postgis'
 brew 'redis', restart_service: true
 brew 'the_silver_searcher'
 brew 'tree'

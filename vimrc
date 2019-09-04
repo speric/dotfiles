@@ -2,7 +2,7 @@
 call plug#begin()
 
 Plug 'chriskempson/tomorrow-theme'
-Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
+Plug 'hail2u/vim-css3-syntax', { 'for': ['css'] }
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
@@ -19,7 +19,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-git'
-Plug 'tpope/vim-rails', { 'for': 'ruby' }
+Plug 'tpope/vim-rails', { 'for': ['ruby'] }
 Plug 'tpope/vim-repeat'
 Plug 'trevordmiller/nova-vim'
 Plug 'vim-airline/vim-airline'

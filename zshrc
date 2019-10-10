@@ -13,7 +13,7 @@ path+=(
   ${HOME}/dev/dotfiles/bin
   ${HOME}/.rvm/bin
   ${HOME}/.ebcli-virtual-env/executables
-  /usr/local/opt/mysql@5.7/bin
+  /usr/local/opt/mysql@8.0/bin
   /usr/local/opt/node@6/bin
   /usr/local/sbin
 )

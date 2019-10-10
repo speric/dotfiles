@@ -14,3 +14,4 @@ frontend/node_modules
 activities.json
 spec/vcr
 *.svg
+config/initializers/banned_domains.rb

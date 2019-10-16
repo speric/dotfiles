@@ -33,6 +33,7 @@ brew 'zsh'
 brew 'zsh-completions'
 
 cask '1password'
+cask 'atom'
 cask 'cloudapp'
 cask 'dash'
 cask 'encryptme'

@@ -166,6 +166,10 @@ let g:rustfmt_autosave = 1
 let g:netrw_liststyle=3
 let g:netrw_banner=0
 
+" set line width to 85 chars for Makrdown files
+au BufRead,BufNewFile *.md setlocal textwidth=85
+au BufRead,BufNewFile *.markdown setlocal textwidth=85
+
 " bind \ (backward slash) to grep shortcut
 command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 

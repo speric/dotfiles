@@ -16,3 +16,4 @@ spec/vcr
 *.svg
 config/initializers/banned_domains.rb
 app/assets/javascripts/public
+spec/billy_cache

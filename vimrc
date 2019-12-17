@@ -15,12 +15,12 @@ Plug 'rust-lang/rust.vim', { 'for': ['rust'] }
 Plug 'szw/vim-tags'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-cucumber'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-rails', { 'for': ['ruby'] }
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-rhubarb'
 Plug 'trevordmiller/nova-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -235,3 +235,10 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
+
+let g:rails_projections = {
+  \   "app/services/**/*/*.rb": {
+  \     "alternate": "spec/services/**/*/{}_spec.rb",
+  \     "test": "spec/services/**/*/{}_spec.rb",
+  \   },
+  \ }

@@ -4,6 +4,7 @@ tap 'homebrew/services'
 
 brew 'git'
 brew 'ack'
+brew 'archey'
 brew 'awsebcli'
 brew 'awscli'
 brew 'bat'

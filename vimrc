@@ -25,7 +25,6 @@ Plug 'trevordmiller/nova-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/Align'
-Plug 'w0rp/ale'
 
 call plug#end()
 
@@ -186,6 +185,7 @@ let g:airline_section_y = ''
 let g:airline_section_z = '%l/%L:%v'
 
 " -- FZF
+"
 let g:fzf_layout = { 'down': '~20%' }
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
@@ -202,43 +202,7 @@ let g:fzf_colors =
   \ 'header':  ['fg', 'Comment'] }
 let g:fzf_buffers_jump = 1
 
-" -- ALE
-
-let g:ale_lint_on_text_changed = 0
-let g:ale_lint_on_enter = 1
-let g:ale_lint_on_save = 1
-let g:ale_sign_error = '=>'
-let g:ale_sign_warning = '->'
-let g:ale_sign_column_always = 1
-let g:ale_set_higlights = 1
-let g:ale_set_loclist = 0
-let g:ale_set_quickfix = 1
-let g:ale_linters = {
-\  'javascript': ['eslint'],
-\  'ruby': ['rubocop'],
-\}
-
-" message format
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-
-" use ctrl+j/k to navigate between warnings/errors
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
-
-" " reset sign column background colors
-" highlight link ALEError SignColumn
-" highlight link ALEWarning SignColumn
-" highlight link ALEErrorSign SignColumn
-" highlight link ALEWarningSign SignColumn
-
 " Remember last position in a file
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
-
-let g:rails_projections = {
-  \   "app/services/**/*/*.rb": {
-  \     "alternate": "spec/services/**/*/{}_spec.rb",
-  \     "test": "spec/services/**/*/{}_spec.rb",
-  \   },
-  \ }

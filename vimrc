@@ -185,7 +185,6 @@ let g:airline_section_y = ''
 let g:airline_section_z = '%l/%L:%v'
 
 " -- FZF
-"
 let g:fzf_layout = { 'down': '~20%' }
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],

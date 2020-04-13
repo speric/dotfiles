@@ -1,0 +1,10 @@
+# !/bin/sh
+# Usage: git-p
+# Checkout `master`, pull the latest, delete local branches
+# Bundle, run DB migrations
+
+g cm
+g pull
+g cleanup
+bundle
+bin/rake db:migrate db:test:prepare

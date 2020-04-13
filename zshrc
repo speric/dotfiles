@@ -14,7 +14,7 @@ path+=(
   ${HOME}/.rvm/bin
   ${HOME}/.ebcli-virtual-env/executables
   /usr/local/opt/mysql@8.0/bin
-  /usr/local/opt/node@6/bin
+  /usr/local/opt/node@13/bin
   /usr/local/sbin
 )
 

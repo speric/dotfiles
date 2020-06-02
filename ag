@@ -17,3 +17,4 @@ spec/vcr
 config/initializers/banned_domains.rb
 app/assets/javascripts/public
 spec/billy_cache
+spec/fixtures

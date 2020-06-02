@@ -1,0 +1,7 @@
+# !/bin/sh
+# Usage: git-update-from-upstream
+# Update local master from upstream master
+
+g co master
+g fetch upstream
+g rebase upstream/master

@@ -19,7 +19,6 @@ ln -s $(pwd)/pry $HOME/.pryrc
 ln -s $(pwd)/rvm $HOME/.rvmrc
 ln -s $(pwd)/ag $HOME/.agignore
 ln -s $(pwd)/spring $HOME/.spring.rb
-ln -s $(pwd)/speric.zsh-theme $HOME/.oh-my-zsh/themes/speric.zsh-theme
 ln -s $(pwd)/rubocop.yml $HOME/.rubocop.yml
 mkdir $HOME/.vimundo/
 
@@ -38,9 +37,10 @@ $(brew --prefix)/opt/fzf/install
 
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
   echo "[dotfiles] Installing oh-my-zsh..."
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   rm -f $HOME/.zshrc
   ln -s $(pwd)/zshrc $HOME/.zshrc
+  ln -s $(pwd)/speric.zsh-theme $HOME/.oh-my-zsh/themes/speric.zsh-theme
   chsh -s /bin/zsh
 fi
 

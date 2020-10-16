@@ -13,6 +13,7 @@ brew bundle
 echo "[dotfiles] Linking dotfiles..."
 ln -s $(pwd)/gitconfig $HOME/.gitconfig
 ln -s $(pwd)/gitignore $HOME/.gitignore_global
+ln -s $(pwd)/gitattributes $HOME/.gitattributes
 ln -s $(pwd)/vimrc $HOME/.vimrc
 ln -s $(pwd)/gem $HOME/.gemrc
 ln -s $(pwd)/pry $HOME/.pryrc

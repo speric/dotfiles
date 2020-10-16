@@ -1,0 +1,8 @@
+*.html  diff=html
+*.xhtml diff=html
+*.exs   diff=elixir
+*.go    diff=golang
+*.md    diff=markdown
+*.rb    diff=ruby
+*.rake  diff=ruby
+*.rs    diff=rust

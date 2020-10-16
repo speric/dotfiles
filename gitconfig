@@ -1,6 +1,7 @@
 [core]
   editor = vim
   excludesfile = ~/.gitignore_global
+  attributesfile = ~/.gitattributes
 
 [user]
   name = Eric Farkas

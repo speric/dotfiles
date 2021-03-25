@@ -16,18 +16,15 @@ path+=(
   /usr/local/opt/node@13/bin
   /usr/local/sbin
   ${HOME}/.rvm/bin
+  ${HOME}/dev/projects/stable/ops/bin
 )
 
 export EDITOR="vim"
 export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
+export HOMEBREW_NO_AUTO_UPDATE=1
 
 setopt auto_cd
 cdpath=($HOME/dev)
-
-# .localrc: for stuff you don't want in your public, versioned repo
-if [[ -a ~/.localrc ]]; then
-  source ~/.localrc
-fi
 
 # Aliases
 alias ag="ag --path-to-ignore ~/.agignore"
@@ -55,6 +52,11 @@ alias testtail="tail -f ./log/test.log"
 alias unhitch="hitch -u"
 alias vi="vim"
 alias ys="yarn start"
+
+# .localrc: for stuff you don't want in your public, versioned repo
+if [[ -a ~/.localrc ]]; then
+  source ~/.localrc
+fi
 
 # Wrap git with hub
 if [[ -f `command -v hub` ]] ; then alias git=hub ; fi

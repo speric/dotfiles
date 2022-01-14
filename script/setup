@@ -5,10 +5,14 @@ set -e
 if [ ! $(which brew) ]; then
   echo "[dotfiles] Installing homebrew..."
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $HOME/.zprofile
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 echo "[dotfiles] Installing dependencies via Homebrew..."
-brew bundle
+if brew bundle; then
+  echo "[dotfiles] All dependencies installed"
+fi
 
 echo "[dotfiles] Linking dotfiles..."
 ln -s $(pwd)/gitconfig $HOME/.gitconfig
@@ -38,10 +42,10 @@ $(brew --prefix)/opt/fzf/install
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
   echo "[dotfiles] Installing oh-my-zsh..."
   sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  chsh -s /bin/zsh
   rm -f $HOME/.zshrc
   ln -s $(pwd)/zshrc $HOME/.zshrc
   ln -s $(pwd)/speric.zsh-theme $HOME/.oh-my-zsh/themes/speric.zsh-theme
-  chsh -s /bin/zsh
 fi
 
 echo "[dotfiles] Done!"

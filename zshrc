@@ -11,17 +11,16 @@ typeset -U path
 
 path+=(
   ${HOME}/dev/dotfiles/bin
-  ${HOME}/.ebcli-virtual-env/executables
   /usr/local/opt/mysql@8.0/bin
   /usr/local/opt/node@13/bin
   /usr/local/sbin
   ${HOME}/.rvm/bin
-  ${HOME}/dev/projects/stable/ops/bin
 )
 
 export EDITOR="vim"
 export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
 export HOMEBREW_NO_AUTO_UPDATE=1
+export NVM_DIR="$HOME/.nvm"
 
 setopt auto_cd
 cdpath=($HOME/dev)
@@ -90,6 +89,10 @@ function title() {
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"

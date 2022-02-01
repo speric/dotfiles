@@ -1,0 +1,6 @@
+# !/bin/sh
+# Usage: git-update
+# Update a fork with latest upstream commits
+
+git fetch upstream
+git merge upstream/main

@@ -19,8 +19,7 @@ brew 'imagemagick'
 brew 'jq'
 brew 'libyaml'
 brew 'neofetch'
-brew 'node'
-brew 'npm'
+brew 'nvm'
 brew 'openssl'
 brew 'postgres', restart_service: true
 brew 'redis', restart_service: true

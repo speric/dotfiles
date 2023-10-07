@@ -18,3 +18,4 @@ config/initializers/banned_domains.rb
 app/assets/javascripts/public
 spec/fixtures
 yarn.lock
+public/assets

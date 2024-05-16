@@ -19,3 +19,12 @@ app/assets/javascripts/public
 spec/fixtures
 yarn.lock
 public/assets
+main.js
+*.min.js
+*.bundle.js
+app/extensions/
+search.json
+docs/assets/search.js
+__mocks__/
+docs/
+hz/common/temp/

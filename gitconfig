@@ -5,7 +5,7 @@
 
 [user]
   name = Eric Farkas
-  email = eric@prudentiadigital.com
+  email = efarkas@adobe.com
 
 [help]
   autocorrect = 1
@@ -32,7 +32,7 @@
 
   undo = !"git reset --hard HEAD"
 
-  on = !"git checkout"
+  # on = !"git checkout"
 
   # +rbranch+ returns the remote branch for the current branch you are on assuming it
   # is named the same
@@ -61,3 +61,5 @@
   enabled = 1
 [hub]
   protocol = https
+[init]
+	defaultBranch = main

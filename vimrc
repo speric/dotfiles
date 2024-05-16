@@ -2,6 +2,7 @@
 call plug#begin()
 
 Plug 'chriskempson/tomorrow-theme'
+Plug 'dense-analysis/ale'
 Plug 'hail2u/vim-css3-syntax', { 'for': ['css'] }
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }

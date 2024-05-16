@@ -2,5 +2,7 @@
 # Usage: git-update
 # Update a fork with latest upstream commits
 
+git co main
 git fetch upstream
 git merge upstream/main
+git pull

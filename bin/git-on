@@ -1,0 +1,35 @@
+#!/bin/sh
+# Usage: git-on
+# Check out a remote branch
+# If the branch name is from a fork, as in 'author:branchName',
+# we will create a branch from that work, with the same branch name.
+# If the branch is from the origin of this repository, we will simply
+# check out that remote branch locally.
+
+set -e
+
+IFS=':'
+read -ra BRANCH_ARGS <<< "$1"
+unset IFS
+
+if [ ${#BRANCH_ARGS[@]} -gt 1 ]
+then
+  FULL_REPO_URL=$(git remote get-url origin)
+  REPO_NAME=$(basename $(git remote get-url origin))
+
+  IFS=':'
+  echo "${REPO_NAME}"
+  read -ra REPO <<< "$FULL_REPO_URL"
+  unset IFS
+
+  REPO_BASE=${REPO[0]}
+  AUTHOR=${BRANCH_ARGS[0]}
+  BRANCH=${BRANCH_ARGS[1]}
+
+  echo "${REPO_BASE}:${AUTHOR}/${REPO_NAME} ${BRANCH}:${BRANCH}"
+
+  git fetch ${REPO_BASE}:${AUTHOR}/${REPO_NAME} ${BRANCH}:${BRANCH}
+  git checkout ${BRANCH}
+else
+  git checkout $1
+fi

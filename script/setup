@@ -22,6 +22,7 @@ ln -s $(pwd)/vimrc $HOME/.vimrc
 ln -s $(pwd)/gem $HOME/.gemrc
 ln -s $(pwd)/pry $HOME/.pryrc
 ln -s $(pwd)/rvm $HOME/.rvmrc
+ln -s $(pwd)/curl $HOME/.curlrc
 ln -s $(pwd)/ag $HOME/.agignore
 ln -s $(pwd)/spring $HOME/.spring.rb
 mkdir $HOME/.vimundo/

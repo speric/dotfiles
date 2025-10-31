@@ -43,7 +43,7 @@
 
   short-recent = "for-each-ref --count=25 --sort=-committerdate refs/heads/ --format='%(refname:short)'"
 
-  squash = !"git rebase -i master"
+  squash = !"git rebase -i $(git show-ref --verify --quiet refs/heads/main && echo main || echo master)"
 
   # +rreview+ shows changes in your local branch that its remote branch does not have
   review = !"git log `git rbranch`..`git cbranch`"

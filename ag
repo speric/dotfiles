@@ -28,3 +28,4 @@ docs/assets/search.js
 __mocks__/
 docs/
 hz/common/temp/
+jira-data/*.json
